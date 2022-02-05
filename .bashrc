@@ -1,0 +1,1 @@
+export SECRET_KEY="(django-insecure-1hk\)jz2\@qc7rp_v80qqcn4y_re3g\!etq\-83\(tzkq\@0\)\%oy\&\&70)"
