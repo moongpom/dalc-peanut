@@ -32,4 +32,4 @@
 # 계정
 * (admin superuser 이 계정으로 로그인해도 되고 새로만들어도 됨 - 아직 생성 안 함
 
-* id :   #pw :    )
+* id :dalc  #pw :aa112233    )
