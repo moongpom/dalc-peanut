@@ -14,7 +14,7 @@
 * python -m venv myvenv      
 * source myvenv/Scripts/activate
 
-* pip3 install django  
+* pip install django  
 * pip install pillow 
 
 * 폴더 안으로 이동 : cd dalc-peanut
