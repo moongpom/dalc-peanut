@@ -30,22 +30,14 @@
     <link rel="stylesheet" href="{%static './css/animation.css' %}">
     <link rel="stylesheet" href="{%static './css/result.css' %}">
     <script src="https://developers.kakao.com/sdk/js/kakao.js">
-
     </script>
     <script>
-        Kakao.init('4b78306c2806c638eb2beb5301da89ef');
+        Kakao.init('97154db629d66a733ad4c48e0abb6efd');
         Kakao.isInitialized();
     </script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMXD1KV1W">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        // gtag('config', 'G-7DMXD1KV1W');
-    </script>
+    <!-- 배포 후 추가 필요-->
 
 </head>
 
@@ -60,6 +52,7 @@
       <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto" style="color:yellow; background-color:#f6a329; padding:20px;"></div>
                 <!--<img id="mainImg" src="./img/lv5.png" alt="mainImage" class="img-fluid" width="45%" , height="40%">-->
             </div>
+            <img src="{%static 'image/index_image.png'%}" alt="img">
             <p id="subfont">
                <span>Peanut은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
             </p>
