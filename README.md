@@ -19,7 +19,7 @@ source myvenv/Scripts/activate
 
 
 
-pip3 install django
+pip3 install django  
 
 pip install pillow 
 
