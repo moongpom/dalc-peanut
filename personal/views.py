@@ -20,7 +20,10 @@ def imageUpload(request):
 #만약 model에 있는 필드를 다 담아줬다면  그냥 바로 저장해줘도 됨
             imgForm.save()
             #return redirect("detailPage",book.id)
-            return redirect("index")
+            return redirect("colorSelect")
     else:
         image_form = ImageForm()
         return render(request,'imageUpload.html',{'form':ImageForm})
+
+def colorSelect(request):
+    return render(request,"colorSelect.html")

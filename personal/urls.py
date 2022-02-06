@@ -18,5 +18,5 @@ from django.urls import path
 from personal.views import *
 urlpatterns = [
     path('imageUpload/',imageUpload,name="imageUpload"),
-    
+    path('colorSelect/',colorSelect,name="colorSelect"),
 ]
