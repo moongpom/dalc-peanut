@@ -8,7 +8,9 @@ git init
 
 
 가상환경 
-python -m venv myvenv 
+
+python -m venv myvenv      
+
 source myvenv/Scripts/activate
 
 
