@@ -15,7 +15,7 @@ pip install pillow -
 
 cd 프로젝트폴더명
 
-# 클론 끝나고 필요시 사용할 명령어랑 깔아야 할 것 목록
+#클론 끝나고 필요시 사용할 명령어랑 깔아야 할 것 목록
 
 python manage.py collectstatic (static파일 모으는 거)
 
