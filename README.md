@@ -8,12 +8,11 @@ git init
 
 ---가상환경
 python -m venv myvenv
-
 source myvenv/Scripts/activate
 -----
 
 pip3 install django
-pip install pillow - 
+pip install pillow 
 
 cd 프로젝트폴더명
 
