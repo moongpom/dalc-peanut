@@ -7,8 +7,8 @@ git clone 한 뒤에 순서대로 입력하기
 git init
 
 @@@
-가상환경
-python -m venv myvenv
+가상환경 \n
+python -m venv myvenv \n
 source myvenv/Scripts/activate
 @@@
 
