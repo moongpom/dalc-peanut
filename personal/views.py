@@ -27,6 +27,10 @@ def imageUpload(request):
 
 def colorSelect(request,imageId):
     image = get_object_or_404(ImageData,pk=imageId) 
+    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
+    if image.sessionData != request.session.session_key :
+
+          return render(request,"index.html")
     # 세가지 숫자 조합 (0~256까지) 이중리스트로 8개 생성  
     #사진 어케 넘겨줌? \
     colorList=[]
