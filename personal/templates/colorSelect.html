@@ -1,53 +1,10 @@
+{%extends 'base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
-<meta charset="utf-8">
-<title>Animated Circle Menu Demo</title>
-<head>
-  <meta name="viewport" content="width=device-width">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
 
-  <!-- sns share -->
-  <meta property="og:url" content="" />
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="" />
 
-  <!-- favicon -->
-  <link rel="shortcut icon" href="img/korea1.ico">
-  <link rel="apple-touch-icon-precomposed" href="img/korea1.ico">
-
-  <title>PEANUT</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/default.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/qna.css">
-  <link rel="stylesheet" href="./css/animation.css">
-  <link rel="stylesheet" href="./css/result.css">
-  <script src="https://developers.kakao.com/sdk/js/kakao.js">
-  </script>
-  
-  <script>
-    Kakao.init('97154db629d66a733ad4c48e0abb6efd');
-    Kakao.isInitialized();
-  </script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- 배포 후 추가 필요-->
-
-</head>
-
-<body>
-  <div class="container">
+{%block content %}
     <section id="main" class="mainfont mx-auto my-5 px-3">
-      <img src="n_27.png" srcset="n_27.png 1x, n_27@2x.png 2x">
+      <img src="{%static 'image/n_27.png'%}" alt="img">
         <p id="subfont">
           <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
 
@@ -61,7 +18,7 @@
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td bgcolor="green">
-                <label><input type="checkbox" name="color" value="blue"</label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td bgcolor="red">
                 <label><input type="checkbox" name="color" value="blue"></label>
@@ -90,10 +47,4 @@
         </form>
         </p>
     </section>
-  </div>
-
-<script src="./js/data.js" charset="UTF-8"></script>
-<script src="./js/start.js" charset="UTF-8"></script>
-<script src="./js/share.js" charset="UTF-8"></script>
-</body>
-</html>
+    {%endblock%}
