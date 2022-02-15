@@ -7,7 +7,7 @@
 * git init
 
 
-```터미널 git bash로``` 
+```터미널 git bash로 실행하기``` 
 
 # 가상환경 
 
