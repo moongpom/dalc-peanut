@@ -35,6 +35,7 @@
 * pip install joblib
 
 # 계정
-* (admin superuser 이 계정으로 로그인해도 되고 새로만들어도 됨 - 아직 생성 안 함
+* (admin superuser 이 계정으로 로그인해도 되고 새로만들어도 됨 
+* -중간에 데이터날리면서 사라질경우 python manage.py createsuperuser 해서 생성해주기
 
 * id :dalc  #pw :aa112233    )
