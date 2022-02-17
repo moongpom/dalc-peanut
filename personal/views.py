@@ -5,6 +5,7 @@ from django.utils import timezone
 import random
 # Create your views here.
 def index(request):
+
     return render(request,"index.html")
 
 def imageUpload(request):
@@ -30,7 +31,7 @@ def colorSelect(request,imageId):
     print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
     if image.sessionData != request.session.session_key :
 
-          return render(request,"index.html")
+          return render(request,"index.html",{'err':1})
     # 세가지 숫자 조합 (0~256까지) 이중리스트로 8개 생성  
     #사진 어케 넘겨줌? \
     colorList=[]
@@ -40,3 +41,7 @@ def colorSelect(request,imageId):
             line.append(random.randrange(257) )
         colorList.append(line)
     return render(request,"colorSelect.html",{'imageContents':image})
+
+def result(request):
+    # 머신러닝에서 받아온 데이터를 여기에 뽑아주기
+    return render(request,"result.html")

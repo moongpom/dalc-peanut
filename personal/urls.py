@@ -19,4 +19,7 @@ from personal.views import *
 urlpatterns = [
     path('imageUpload/',imageUpload,name="imageUpload"),
     path('colorSelect/<int:imageId>',colorSelect,name="colorSelect"),
+    #최종 결과에서는 이미지 아이디 넘겨주기
+    #path('result/<int:imageId>',result,name="result"),
+    path('result/',result,name="result"),
 ]

@@ -42,6 +42,11 @@
 </head>
 
 <body>
+    {% if err == 1 %}
+    <script type="text/javascript">
+        alert("잘못된 접근입니다.\n 메인으로 돌아갑니다");
+        </script>
+    {%endif%}
     <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">

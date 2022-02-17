@@ -1,62 +1,14 @@
+{%extends 'base.html'%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="ko">
 
-<head>
-    <meta name="viewport" content="width=device-width">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
 
-    <!-- sns share -->
-    <meta property="og:url" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+{%block content %}
 
-    <!-- favicon -->
-    <link rel="shortcut icon" href="img/korea1.ico">
-    <link rel="apple-touch-icon-precomposed" href="img/korea1.ico">
-
-    <title>PEANUT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/default.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/qna.css">
-    <link rel="stylesheet" href="./css/animation.css">
-    <link rel="stylesheet" href="./css/result.css">
-    <script src="https://developers.kakao.com/sdk/js/kakao.js">
-
-    </script>
-    <script>
-        Kakao.init('4b78306c2806c638eb2beb5301da89ef');
-        Kakao.isInitialized();
-    </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7DMXD1KV1W">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        // gtag('config', 'G-7DMXD1KV1W');
-    </script>
-
-</head>
-
-<body>
-    <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">
-		  <img  src="{%static 'image/n_27.png'%}" srcset="n_27.png 1x, n_27@2x.png 2x">
-			<br><br>
-    </div>
+              <img  src="{%static 'image/n_27.png'%}" >
+              <br><br>
+            </div>
             <p id="subfont">
                	<span>나의 퍼스널 컬러는<br/><b>봄 웜</b><br></span> 
                 <img id="mainImg" src="{%static 'image/spring.png'%}" alt="mainImage" class="img-fluid" >
@@ -114,11 +66,5 @@
               </tr>
             </table>
         </section>
-
-        
-    <script src="./js/data.js" charset="UTF-8"></script>
-    <script src="./js/start.js" charset="UTF-8"></script>
-    <script src="./js/share.js" charset="UTF-8"></script>	</div>
-</body>
-
-</html>
+        {%endblock%}
+     
