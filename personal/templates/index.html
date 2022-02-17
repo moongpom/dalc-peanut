@@ -47,17 +47,17 @@
         alert("잘못된 접근입니다.\n 메인으로 돌아갑니다");
         </script>
     {%endif%}
+
     <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
-            	<div id=" titlefont">
-		  <img src="{%static 'image/n_27.png'%}" alt="img">
-		  <!-- srcset="n_27.png 1x, n_27@2x.png 2x"-->
-			
-<br><br>
-      <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto" style="color:yellow; background-color:#f6a329; padding:20px;"></div>
-                <!--<img id="mainImg" src="./img/lv5.png" alt="mainImage" class="img-fluid" width="45%" , height="40%">-->
+            <div id=" titlefont">
+		        <img src="{%static 'image/n_27.png'%}" alt="img"><br>
             </div>
-            <img src="{%static 'image/index_image.png'%}" alt="img">
+
+            <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+                <img id="mainImg" src="{%static 'image/index_image.png'%}" alt="mainImage" class="img-fluid">
+            </div>
+
             <p id="subfont">
                <span>Peanut은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
             </p>

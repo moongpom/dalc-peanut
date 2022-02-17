@@ -7,7 +7,12 @@ body{
 }
 
 #mainImg {
-  width: 50%;
+  width: 90%;
+  height: auto;
+}
+
+#resultImg {
+  width: 60%;
   height: auto;
 }
 
