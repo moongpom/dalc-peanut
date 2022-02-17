@@ -3,6 +3,21 @@
 
 
 {%block content %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script> 
+
+  $(document).ready(function(){ 
+      $("input[type='checkbox']").on("click" , function(){ 
+          var count = $("input:checked[type='checkbox']").length; 
+              if(count > 2){ 
+                  this.checked=false;
+                  alert("2개까지 선택해주세요!"); 
+            }       
+      }); 
+  }); 
+  
+  </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
       <img src="{%static 'image/n_27.png'%}" alt="img">
         <p id="subfont">

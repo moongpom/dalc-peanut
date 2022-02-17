@@ -20,9 +20,9 @@ urlpatterns = [
     path('imageUpload/',imageUpload,name="imageUpload"),
 
     # 나중에는 아래에 주석 있는 애 풀고 커밋
-    path('colorSelect/', colorSelect, name="colorSelect"),
+    #path('colorSelect/', colorSelect, name="colorSelect"),
 
-    # path('colorSelect/<int:imageId>',colorSelect,name="colorSelect"),
+     path('colorSelect/<int:imageId>',colorSelect,name="colorSelect"),
     # #최종 결과에서는 이미지 아이디 넘겨주기
     # #path('result/<int:imageId>',result,name="result"),
 
