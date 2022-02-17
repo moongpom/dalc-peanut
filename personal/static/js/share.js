@@ -2,8 +2,8 @@ const url = 'https://127.0.0.1:8000';
 
 function shareKakao() {
   var shareImage = 'https://ifh.cc/g/0Jt2XM.png';
-  const shareTitle = '퍼스널컬러 진단 서비스 Peanut';
-  const shareDes = 'Peanut은 퍼스널컬러를 쉽게 진단할 수 있는 서비스입니다';
+  const shareTitle = '퍼스널컬러';
+  const shareDes = '퍼스널컬러 진단 서비스 Peanut';
 
   Kakao.Link.sendDefault({
     objectType: 'feed',
