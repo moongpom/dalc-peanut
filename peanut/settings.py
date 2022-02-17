@@ -79,7 +79,7 @@ ROOT_URLCONF = 'peanut.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['peanut/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
