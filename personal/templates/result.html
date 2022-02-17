@@ -6,7 +6,7 @@
 
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">
-              <img  src="{%static 'image/n_27.png'%}" >
+              <img id="uni"  src="{%static 'image/n_27.png'%}" >
               <br><br>
             </div>
             <p id="subfont">
@@ -58,9 +58,9 @@
                 <td colspan="3"><br>공유하기</br></td>
               </tr>
               <tr>
-                <td><img id="shareImg" src="{%static 'image/kakaotalk.png'%}" onclick="js:setShare()"></td>
+                <td><img id="shareImg" src="{%static 'image/kakaotalk.png'%}" onclick="js:shareKakao()"></td>
                 <td><img id="shareImg" src="{%static 'image/twitter.png'%}" onclick="js:shareTwitter()" /></td>
-                <td><img id="shareImg" src="{%static 'image/url.png'%}" onclick="js:copy()" /></td>
+                <td><img id="shareImg" src="{%static 'image/url.png'%}" onclick="js:shareURL()" /></td>
               </tr>
               <tr>
                 <td>카카오톡</td>
