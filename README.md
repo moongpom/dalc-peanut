@@ -20,7 +20,7 @@
 * 폴더 안으로 이동 : cd dalc-peanut
 
 # 클론 끝나고 필요시 사용할 명령어랑 깔아야 할 것 목록
- 이거 하려면 secrets.json 파일추가하고 은영 시크릿키 넣어야함 필요하신분 은영이에게 연락쥬세요ㅕ >,<
+ 이거 하려면 secrets.json 파일추가하고 은영 시크릿키 넣어야함 필요하신분 은영이에게 연락쥬세요ㅕ >,< (secrets.json 위치 = manage.py랑 같은 위치)
 
 * python manage.py collectstatic (static파일 모으는 거)
 
