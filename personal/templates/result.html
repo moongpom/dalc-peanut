@@ -10,9 +10,12 @@
               <br><br>
             </div>
             <p id="subfont">
-               	<span>나의 퍼스널 컬러는<br/><b>봄 웜</b><br></span> 
-                <img id="mainImg" src="{%static 'image/spring.png'%}" alt="mainImage" class="img-fluid" >
+              <span>나의 퍼스널 컬러는<br/><b>봄 웜</b><br></span> 
             </p>
+
+            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+              <img id="resultImg" src="{%static 'image/spring.png'%}" alt="mainImage" class="img-fluid">
+            </div>
 
             <table id="resultTable">
               <tr><td colspan="4">
@@ -48,7 +51,7 @@
             <table id="shareTable">
               <tr>
                 <td colspan="3">
-                  <button type="button" class="startBtn mx-auto" onclick="js:begin()">다시하기</button>
+                  <button type="button" class="startBtn mx-auto" onclick="js:begin()"> <a href="{% url 'index'%}">다시하기</a></button>
                 </td>
               </tr>
               <tr>
