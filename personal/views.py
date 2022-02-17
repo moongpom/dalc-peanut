@@ -27,25 +27,25 @@ def imageUpload(request):
         return render(request,'imageUpload.html',{'form':ImageForm})
 
 
-# def colorSelect(request,imageId):
-    # image = get_object_or_404(ImageData,pk=imageId) 
-    # print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
-    # if image.sessionData != request.session.session_key :
+def colorSelect(request,imageId):
+    image = get_object_or_404(ImageData,pk=imageId) 
+    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
+    if image.sessionData != request.session.session_key :
 
-    #       return render(request,"index.html",{'err':1})
+          return render(request,"index.html",{'err':1})
     # # 세가지 숫자 조합 (0~256까지) 이중리스트로 8개 생성  
     # #사진 어케 넘겨줌? \
-    # colorList=[]
-    # for _ in range(8):
-    #     line=[]
-    #     for _ in range(3):
-    #         line.append(random.randrange(257) )
-    #     colorList.append(line)
-    # return render(request,"colorSelect.html",{'imageContents':image})
-
+    colorList=[]
+    for _ in range(8):
+        line=[]
+        for _ in range(3):
+            line.append(random.randrange(257) )
+        colorList.append(line)
+    return render(request,"colorSelect.html",{'imageContents':image})
+'''
 def colorSelect(request):
     return render(request, "colorSelect.html")
-
+'''
 
 def loading(request):
     # 머신러닝 돌리는 중에 loading 창이 떠야 함
