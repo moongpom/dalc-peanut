@@ -26,7 +26,6 @@ def imageUpload(request):
         image_form = ImageForm()
         return render(request,'imageUpload.html',{'form':ImageForm})
 
-
 def colorSelect(request,imageId):
     image = get_object_or_404(ImageData,pk=imageId) 
     print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
@@ -46,6 +45,7 @@ def colorSelect(request,imageId):
 def colorSelect(request):
     return render(request, "colorSelect.html")
 '''
+
 
 def loading(request):
     # 머신러닝 돌리는 중에 loading 창이 떠야 함
