@@ -28,28 +28,41 @@ def imageUpload(request):
 
 def colorSelect1(request,imageId):
     print(imageId)
-    image = get_object_or_404(ImageData,pk=imageId) 
-    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
-    if request.method == 'GET': 
-        print("진행2 --")
-       
-        color_form = ColorForm1(instance=image)
-        print("진행3 --")
-        if image.sessionData != request.session.session_key :
-            print("진행4 --")
-            return render(request,"index.html",{'err':1})
+    image=ImageData.objects.get(id= imageId)
+
+    if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
         
-        else :
-            print("진행5 --")
-            return render(request,"colorSelect1.html",{'imageContents':image,'form':color_form,'imageId':imageId})
+    else :
+        if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color'))
+            print("request.POST['color1']",request.POST.getlist('color'))
+            image.c1=request.POST['color']
+            image.c2=request.POST['color']
+            image.save()
+            return redirect("colorSelect2",imageId)
+        else : 
+            return render(request,"colorSelect1.html",{'imageContents':image,'imageId':imageId})
        
-    else : 
-        
-        color_form = ColorForm1(request.POST,request.FILES)
-        print("진행1 --")
-        color_form.save()
-        return redirect("colorSelect2",imageId)
+
 def colorSelect2(request,imageId):
+    print(imageId)
+    image=ImageData.objects.get(id= imageId)
+    color_form=ColorForm1(instance=image)
+    print("이거 이상핮ㄴ데? ",color_form)
+
+    if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
+        
+    else :
+        if request.method == "POST":
+            color_form = ColorForm1(request.POST, instance = image)
+            print("제발조 ㅁ돼라 --")
+            color_form.save()
+            return redirect("colorSelect3",imageId)
+        else : return render(request,"colorSelect2.html",{'imageContents':image,'form':color_form,'imageId':imageId}) 
+    
+def colorSelect3(request,imageId):
     print(imageId)
     image = get_object_or_404(ImageData,pk=imageId) 
     print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
@@ -73,29 +86,6 @@ def colorSelect2(request,imageId):
         color_form.save()
         return redirect("colorSelect3",imageId)
 
-def colorSelect3(request,imageId):
-    print(imageId)
-    image = get_object_or_404(ImageData,pk=imageId) 
-    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
-    if request.method == 'GET': 
-        print("진행2 --")
-       
-        color_form = ColorForm3(instance=image)
-        print("진행3 --")
-        if image.sessionData != request.session.session_key :
-            print("진행4 --")
-            return render(request,"index.html",{'err':1})
-        
-        else :
-            print("진행5 --")
-            return render(request,"colorSelect3.html",{'imageContents':image,'form':color_form,'imageId':imageId})
-       
-    else : 
-        
-        color_form = ColorForm3(request.POST,request.FILES)
-        print("진행1 --")
-        color_form.save()
-        return redirect("colorSelect4",imageId)
 '''
 def colorSelect(request):
     return render(request, "colorSelect.html")
