@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import ImageForm
+from .forms import *
 from .models import ImageData
 from django.utils import timezone
 import random
@@ -21,22 +21,81 @@ def imageUpload(request):
             print(imgForm.sessionData)
             #만약 model에 있는 필드를 다 담아줬다면  그냥 바로 저장해줘도 됨
             imgForm.save()
-            return redirect("colorSelect",imgForm.id)
+            return redirect("colorSelect1",imgForm.id)
     else:
         image_form = ImageForm()
-        return render(request,'imageUpload.html',{'form':ImageForm})
+        return render(request,'imageUpload.html',{'form':image_form})
 
-def colorSelect(request,imageId):
+def colorSelect1(request,imageId):
+    print(imageId)
+    image = get_object_or_404(ImageData,pk=imageId) 
+    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
     if request.method == 'GET': 
-        image = get_object_or_404(ImageData,pk=imageId) 
-        print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
-        if image.sessionData != request.session.session_key :
-
-            return render(request,"index.html",{'err':1})
+        print("진행2 --")
        
-        return render(request,"colorSelect.html",{'imageContents':image})
+        color_form = ColorForm1(instance=image)
+        print("진행3 --")
+        if image.sessionData != request.session.session_key :
+            print("진행4 --")
+            return render(request,"index.html",{'err':1})
+        
+        else :
+            print("진행5 --")
+            return render(request,"colorSelect1.html",{'imageContents':image,'form':color_form,'imageId':imageId})
+       
+    else : 
+        
+        color_form = ColorForm1(request.POST,request.FILES)
+        print("진행1 --")
+        color_form.save()
+        return redirect("colorSelect2",imageId)
+def colorSelect2(request,imageId):
+    print(imageId)
+    image = get_object_or_404(ImageData,pk=imageId) 
+    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
+    if request.method == 'GET': 
+        print("진행2 --")
+       
+        color_form = ColorForm2(instance=image)
+        print("진행3 --")
+        if image.sessionData != request.session.session_key :
+            print("진행4 --")
+            return render(request,"index.html",{'err':1})
+        
+        else :
+            print("진행5 --")
+            return render(request,"colorSelect2.html",{'imageContents':image,'form':color_form,'imageId':imageId})
+       
+    else : 
+        
+        color_form = ColorForm1(request.POST,request.FILES)
+        print("진행1 --")
+        color_form.save()
+        return redirect("colorSelect3",imageId)
 
-
+def colorSelect3(request,imageId):
+    print(imageId)
+    image = get_object_or_404(ImageData,pk=imageId) 
+    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
+    if request.method == 'GET': 
+        print("진행2 --")
+       
+        color_form = ColorForm3(instance=image)
+        print("진행3 --")
+        if image.sessionData != request.session.session_key :
+            print("진행4 --")
+            return render(request,"index.html",{'err':1})
+        
+        else :
+            print("진행5 --")
+            return render(request,"colorSelect3.html",{'imageContents':image,'form':color_form,'imageId':imageId})
+       
+    else : 
+        
+        color_form = ColorForm3(request.POST,request.FILES)
+        print("진행1 --")
+        color_form.save()
+        return redirect("colorSelect4",imageId)
 '''
 def colorSelect(request):
     return render(request, "colorSelect.html")

@@ -52,6 +52,7 @@
           <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
 
           <form method="post" action="">
+            {%csrf_token%}
           <table>
             <tr>
               <td class="random-color">
@@ -86,7 +87,7 @@
             </tr>
           </table> 
 
-          <button type="submit" value="다음으로" class="selectbtn mx-auto" onclick="js:begin()">
+          <button type="submit" value="다음으로" class="selectbtn mx-auto">
         </form>
         </p>
     </section>
