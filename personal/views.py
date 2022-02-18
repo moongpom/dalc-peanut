@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .forms import ImageForm
+from .forms import *
 from .models import ImageData
 from django.utils import timezone
 import random
@@ -19,28 +19,85 @@ def imageUpload(request):
             imgForm.sessionData = request.session.session_key
             print("세션확인 --")
             print(imgForm.sessionData)
+            print(request.session.session_key)
             #만약 model에 있는 필드를 다 담아줬다면  그냥 바로 저장해줘도 됨
             imgForm.save()
-            return redirect("colorSelect",imgForm.id)
+            return redirect("colorSelect1",imgForm.id)
     else:
         image_form = ImageForm()
-        return render(request,'imageUpload.html',{'form':ImageForm})
+        return render(request,'imageUpload.html',{'form':image_form})
 
-def colorSelect(request,imageId):
-    image = get_object_or_404(ImageData,pk=imageId) 
-    print("session확인 image session 정보 : " + image.sessionData + "현재 세션 정보 " +request.session.session_key)
+def colorSelect1(request,imageId):
+    print(imageId)
+    image=ImageData.objects.get(id= imageId)
+
     if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
+        
+    else :
+        if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color')[0])
+            print("request.POST['color1']",request.POST.getlist('color')[1])
+            image.c1=request.POST.getlist('color')[0]
+            image.c2=request.POST.getlist('color')[1]
+            image.save()
+            return redirect("colorSelect2",imageId)
+        else : 
+            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
+#colorselct.html이 굳이 여러개여야 할까? 그냥 하나로 하고서 view에서만 여러개 나눠서 조정해주면 되지않나?
+def colorSelect2(request,imageId):
+    print(imageId)
+    image=ImageData.objects.get(id= imageId)
 
-          return render(request,"index.html",{'err':1})
-    # # 세가지 숫자 조합 (0~256까지) 이중리스트로 8개 생성  
-    # #사진 어케 넘겨줌? \
-    colorList=[]
-    for _ in range(8):
-        line=[]
-        for _ in range(3):
-            line.append(random.randrange(257) )
-        colorList.append(line)
-    return render(request,"colorSelect.html",{'imageContents':image})
+    if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
+        
+    else :
+        if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color')[0])
+            print("request.POST['color1']",request.POST.getlist('color')[1])
+            image.c3=request.POST.getlist('color')[0]
+            image.c4=request.POST.getlist('color')[1]
+            image.save()
+            return redirect("colorSelect3",imageId)
+        else : 
+            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
+
+def colorSelect3(request,imageId):
+    print(imageId)
+    image=ImageData.objects.get(id= imageId)
+
+    if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
+        
+    else :
+        if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color')[0])
+            print("request.POST['color1']",request.POST.getlist('color')[1])
+            image.c5=request.POST.getlist('color')[0]
+            image.c6=request.POST.getlist('color')[1]
+            image.save()
+            return redirect("colorSelect4",imageId)
+        else : 
+            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
+
+def colorSelect4(request,imageId):
+    print(imageId)
+    image=ImageData.objects.get(id= imageId)
+
+    if image.sessionData != request.session.session_key :
+        return render(request,"index.html",{'err':1})
+        
+    else :
+        if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color')[0])
+            print("request.POST['color1']",request.POST.getlist('color')[1])
+            image.c7=request.POST.getlist('color')[0]
+            image.c8=request.POST.getlist('color')[1]
+            image.save()
+            return redirect("loading")
+        else : 
+            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
 '''
 def colorSelect(request):
     return render(request, "colorSelect.html")
