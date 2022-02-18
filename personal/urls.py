@@ -31,5 +31,5 @@ urlpatterns = [
 
 
     path('result/', result, name="result"),
-    path('loading/', loading, name="loading"),
+    path('loading/<int:imageId>', loading, name="loading"),
 ]
