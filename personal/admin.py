@@ -3,4 +3,3 @@ from .models import * #이때 임포트 해주는 건 models.py에 정의해둔 
 
 # Register your models here.
 admin.site.register(ImageData)
-admin.site.register(ColorPicker)

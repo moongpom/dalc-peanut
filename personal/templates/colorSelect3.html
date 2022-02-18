@@ -44,28 +44,28 @@
       });
   }); 
   
-
+  
   </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
       <img src="{%static 'image/n_27.png'%}" alt="img">
         <p id="subfont">
           <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
 
-          <form method="POST" enctype="multipart/form-data">
+          <form method="post" action="">
             {%csrf_token%}
           <table>
             <tr>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value=R+G+B></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
             </tr>
             <tr>
@@ -73,22 +73,21 @@
             </tr>
             <tr>
               <td class="random-color">
-                <label><input type="checkbox" name="color" ></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color" ></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
               <td class="random-color">
-                <label><input type="checkbox" name="color"></label>
+                <label><input type="checkbox" name="color" value="blue"></label>
               </td>
             </tr>
           </table> 
 
           <button type="submit" value="다음으로" class="selectbtn mx-auto">
-           
         </form>
         </p>
     </section>
