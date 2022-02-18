@@ -95,7 +95,7 @@ def colorSelect4(request,imageId):
             image.c7=request.POST.getlist('color')[0]
             image.c8=request.POST.getlist('color')[1]
             image.save()
-            return redirect("loading")
+            return redirect("loading",imageId)
         else : 
             return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
 '''
@@ -104,8 +104,36 @@ def colorSelect(request):
 '''
 
 
-def loading(request):
+def loading(request,imageId):
     # 머신러닝 돌리는 중에 loading 창이 떠야 함
+    image=ImageData.objects.get(id= imageId)
+    rgbList=[]
+    rgbResult=[] #머신러닝으로 최종으로 보낼 이중리스트
+    rgbList.append(image.c1)
+    rgbList.append(image.c2)
+    rgbList.append(image.c3)
+    rgbList.append(image.c4)
+    rgbList.append(image.c5)
+    rgbList.append(image.c6)
+    rgbList.append(image.c7)
+    rgbList.append(image.c8)
+
+    
+    for value in rgbList:
+        value = value.lstrip('rgb(')
+        value = value.rstrip(')')
+        #print(i)
+        color = value.strip().split(',')
+        color_list=[] #각리스트
+        for i in color :
+            color_list.append(int(i))
+
+        #print(type(color_list[0]))
+        print(color_list)
+        rgbResult.append(color_list)
+        
+    print("=========",rgbResult,"==========")
+    
     return render(request, "loading.html")
 
 def result(request):
