@@ -3,7 +3,14 @@
 
 
 {%block content %}
-
+<style>
+  .random-color {
+    height: 70px;
+  }
+  .img-box {
+    height: 200px;
+  }
+</style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script> 
 
@@ -15,7 +22,28 @@
                   alert("2개까지 선택해주세요!"); 
             }       
       }); 
+
+      //색상 랜덤 Setting
+      const randomNum = () => Math.floor(Math.random() * 257);//(235 - 52 + 1) + 52)
+      const randomRGB1 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB2 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB3 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB4 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB5 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB6 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB7 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+      const randomRGB8 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+
+      //document.write(randomRGB);
+
+      const random = [randomRGB1,randomRGB2,randomRGB3,randomRGB4,randomRGB5,randomRGB6, randomRGB7,randomRGB8];
+      $('.random-color').each((index, data) => {
+        const $input = $(data).find('input'); 
+        $(data).css({background: random[index]})
+        $input.val(random[index]);
+      });
   }); 
+  
   
   </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
@@ -25,34 +53,34 @@
 
           <form method="post" action="">
           <table>
-            <tr height="70">
-              <td bgcolor="green">
+            <tr>
+              <td class="random-color">
+                <label><input type="checkbox" name="color" value=R+G+B></label>
+              </td>
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
-              <td bgcolor="red">
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
-              <td bgcolor="green">
-                <label><input type="checkbox" name="color" value="blue"></label>
-              </td>
-              <td bgcolor="red">
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
             </tr>
             <tr>
-              <td colspan="4" height="200"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image'  >{%endif%}</td>
+              <td class="img-box" colspan="4"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image'  >{%endif%}</td>
             </tr>
-            <tr height="70">
-              <td bgcolor="green">
+            <tr>
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
-              <td bgcolor="red">
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
-              <td bgcolor="green">
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
-              <td bgcolor="red">
+              <td class="random-color">
                 <label><input type="checkbox" name="color" value="blue"></label>
               </td>
             </tr>
