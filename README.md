@@ -38,6 +38,8 @@
 * pip install sklearn
 * pip install joblib
 
+# 머신러닝 실행(폴더는 프로젝트 폴더안에서)
+python personal/optimized_peanut_knn_model.py
 # 계정
 * (admin superuser 이 계정으로 로그인해도 되고 새로만들어도 됨 
 * -중간에 데이터날리면서 사라질경우 python manage.py createsuperuser 해서 생성해주기
