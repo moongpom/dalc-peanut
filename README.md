@@ -51,3 +51,7 @@ python personal/optimized_peanut_knn_model.py
 * pip install dj-database-url
 * pip install psycopg2-binary
 * pip install whitenoise
+
+
+#자주씀
+pip freeze > requirements.txt
