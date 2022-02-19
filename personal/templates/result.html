@@ -3,12 +3,14 @@
 
 
 {%block content %}
+<!--1.봄 2. 가을 3.여름 4. 겨울-->
 
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">
               <img id="uni"  src="{%static 'image/n_27.png'%}" >
               <br><br>
             </div>
+            {% if result_val  == 1 %}
             <p id="subfont">
               <span>나의 퍼스널 컬러는<br/><b>봄 웜</b><br></span> 
             </p>
@@ -16,7 +18,7 @@
             <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
               <img id="resultImg" src="{%static 'image/spring.png'%}" alt="mainImage" class="img-fluid">
             </div>
-
+            
             <table id="resultTable">
               <tr><td colspan="4">
                 <b>봄 웜 라이트</b>와 어울리는 색상</td>
@@ -32,21 +34,231 @@
                 </td>
                  <td>#FFE98D</td>
               </tr>
+              <tr>
+                <td >
+                  <div id="color" style="background-color:#0AB8E2; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#0AB8E2</td>
+                <td>
+                  <div id="color" style="background-color:#E7C587; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#E7C587</td>
+              </tr>
               <tr><td colspan="4">
                 <b>봄 웜 라이트</b>와 반대되는 색상</td>
               </tr>
               <tr>
                 <td>
-                  <div id="color" style="background-color:#FF9898; width:50px; height: 50px; border-radius:50%;" >
+                  <div id="color" style="background-color:#6E5196; width:50px; height: 50px; border-radius:50%;" >
                   </div>
                 </td>
-                <td>#FF9898</td>
+                <td>#6E5196</td>
                 <td>
-                  <div id="color" style="background-color:#FFE98D; width:50px; height: 50px; border-radius:50%;" ></div>
+                  <div id="color" style="background-color:#77936A; width:50px; height: 50px; border-radius:50%;" ></div>
                 </td>
-                 <td>#FFE98D</td>
+                 <td>#77936A</td>
+                 <td>
+                  <div id="color" style="background-color:#E8C271; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#E8C271</td>
+                <td>
+                  <div id="color" style="background-color:#DA5261; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#DA5261</td>
               </tr>
             </table>
+            {%endif%}
+
+            {% if result_val  == 3 %}
+            <p id="subfont">
+              <span>나의 퍼스널 컬러는<br/><b>여름 쿨</b><br></span> 
+            </p>
+
+            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+              <img id="resultImg" src="{%static 'image/summer.png'%}" alt="mainImage" class="img-fluid">
+            </div>
+            
+            <table id="resultTable">
+              <tr><td colspan="4">
+                <b>여름 쿨</b>과 어울리는 색상</td>
+              </tr>
+              <tr>
+                <td >
+                  <div id="color" style="background-color:#00ABBD; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#00ABBD</td>
+                <td>
+                  <div id="color" style="background-color:#6E99C2; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#6E99C2</td>
+                 <td >
+                  <div id="color" style="background-color:#D8C8C9; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#D8C8C9</td>
+                <td>
+                  <div id="color" style="background-color:#E8D0E3; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#E8D0E3</td>
+              </tr>
+              <tr><td colspan="4">
+                <b>여름 쿨</b>과 반대되는 색상</td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="color" style="background-color:#24BFF5; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#24BFF5</td>
+                <td>
+                  <div id="color" style="background-color:#3E8F8E; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#3E8F8E</td>
+                 <td>
+                  <div id="color" style="background-color:#F9DF94; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#F9DF94</td>
+                <td>
+                  <div id="color" style="background-color:#F39E89; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#F39E89</td>
+              </tr>
+            </table>
+            {%endif%}
+            {% if result_val  == 2 %}
+            <p id="subfont">
+              <span>나의 퍼스널 컬러는<br/><b>가을 웜</b><br></span> 
+            </p>
+
+            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+              <img id="resultImg" src="{%static 'image/autumn.png'%}" alt="mainImage" class="img-fluid">
+            </div>
+            
+            <table id="resultTable">
+              <tr><td colspan="4">
+                <b>가을 웜</b>과 어울리는 색상</td>
+              </tr>
+              <tr>
+                <td >
+                  <div id="color" style="background-color:#6A489D; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#6A489D</td>
+                <td>
+                  <div id="color" style="background-color:#ACD1A5; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#ACD1A5</td>
+                </tr>
+                 <tr>
+                 <td >
+                  <div id="color" style="background-color:#EDBEA2; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#EDBEA2</td>
+                <td>
+                  <div id="color" style="background-color:#A48B53; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#A48B53</td>
+              </tr>
+              <tr><td colspan="4">
+                <b>가을 웜</b>과 반대되는 색상</td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="color" style="background-color:#81C46E; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#81C46E</td>
+                <td>
+                  <div id="color" style="background-color:#6DCEF2; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#6DCEF2</td>
+                </tr>
+                <tr>
+                 <td>
+                  <div id="color" style="background-color:#FFFDD7; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#FFFDD7</td>
+                <td>
+                  <div id="color" style="background-color:#E76C5C; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#E76C5C</td>
+              </tr>
+            </table>
+            {%endif%}
+            {% if result_val  == 4 %}
+            <p id="subfont">
+              <span>나의 퍼스널 컬러는<br/><b>겨울 쿨</b><br></span> 
+            </p>
+
+            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+              <img id="resultImg" src="{%static 'image/autumn.png'%}" alt="mainImage" class="img-fluid">
+            </div>
+            
+            <table id="resultTable">
+              <tr><td colspan="4">
+                <b>겨울 쿨</b>과 어울리는 색상</td>
+              </tr>
+              <tr>
+                <td >
+                  <div id="color" style="background-color:#FFF9AC; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#FFF9AC</td>
+                <td>
+                  <div id="color" style="background-color:#2E479B; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#2E479B</td>
+                 <td >
+                  <div id="color" style="background-color:#EEABCE; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#EEABCE</td>
+                <td>
+                  <div id="color" style="background-color:#BDBEC0; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#BDBEC0</td>
+              </tr>
+              <tr><td colspan="4">
+                <b>겨울 쿨</b>과 반대되는 색상</td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="color" style="background-color:#BC63AF; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+                <td>#BC63AF</td>
+                <td>
+                  <div id="color" style="background-color:#5FD4FF; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#5FD4FF</td>
+                 <td>
+                  <div id="color" style="background-color:#FFEc6A; width:50px; height: 50px; border-radius:50%;" >
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>#FFEc6A</td>
+                <td>
+                  <div id="color" style="background-color:#FD745D; width:50px; height: 50px; border-radius:50%;" ></div>
+                </td>
+                 <td>#FD745D</td>
+              </tr>
+            </table>
+            {%endif%}
             <br>
             <table id="shareTable">
               <tr>

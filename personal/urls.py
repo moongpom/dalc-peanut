@@ -30,6 +30,6 @@ urlpatterns = [
     # #path('result/<int:imageId>',result,name="result"),
 
 
-    path('result/', result, name="result"),
+    path('result/<int:result_val>', result, name="result"),
     path('loading/<int:imageId>', loading, name="loading"),
 ]
