@@ -2,7 +2,12 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .forms import *
 from .models import ImageData
 from django.utils import timezone
+import joblib
+import numpy as np
+import os.path
 import random
+
+from collections import Counter
 # Create your views here.
 def index(request):
 
@@ -45,7 +50,7 @@ def colorSelect1(request,imageId):
             return redirect("colorSelect2",imageId)
         else : 
             return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
-#colorselct.html이 굳이 여러개여야 할까? 그냥 하나로 하고서 view에서만 여러개 나눠서 조정해주면 되지않나?
+
 def colorSelect2(request,imageId):
     print(imageId)
     image=ImageData.objects.get(id= imageId)
@@ -135,9 +140,19 @@ def loading(request,imageId):
         rgbResult.append(color_list)
         
     print("=========",rgbResult,"==========")
-    
-    return render(request, "loading.html")
 
-def result(request):
+    scriptpath = os.path.dirname(__file__)
+    filename = os.path.join(scriptpath, 'optimized_peanut_knn_model.pkl')
+    model = joblib.load(filename)
+    test = np.array(rgbResult)
+    res = model.predict(test)
+    #최빈값 
+    count = Counter(res)
+    most = count.most_common(1)
+    print(most[0][0])#최종데이터
+    return render(request, "loading.html",{'result_val':most[0][0]})
+
+def result(request,result_val):
     # 머신러닝에서 받아온 데이터를 여기에 뽑아주기
-    return render(request,"result.html")
+    print("@@@@@@@@최종결과값",result_val)
+    return render(request,"result.html",{'result_val':result_val})
