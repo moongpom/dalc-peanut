@@ -10,15 +10,16 @@
   .img-box {
     height: 200px;
   }
-  input[id="c1"] + label {
+  input[name ="color"] + label {
 				display: inline-block;
-        width:20px;
+        width:50px;
 				cursor: pointer;
 			}
-  input[id="c1"]:checked + label {
-				background-color: #666666;
+  input[name ="color"]:checked + label {
+        height:85px;
+        background-color: black;
 			}
-	input[id="c1"] {
+	input[name ="color"] {
 				display: none;
 			}
 
@@ -68,34 +69,34 @@
             {%csrf_token%}
           <table>
             <tr>
-              <td  class="random-color">
-              <input id="c1" type="checkbox" name="color"> <label for ="c1" class="random-color">    </label>
+              <td  >
+              <input id="c1" type="checkbox" name="color"> <label for ="c1"class="random-color" >    </label>
               </td>
-              <td class="random-color">
-                <input id="c2" type="checkbox" name="color"> <label for ="c2"></label>
+              <td >
+                <input id="c2" type="checkbox" name="color"> <label for ="c2" class="random-color"></label>
               </td>
-              <td class="random-color">
-                <input id="c3" type="checkbox" name="color"> <label for ="c3"></label>
+              <td >
+                <input id="c3" type="checkbox" name="color"> <label for ="c3" class="random-color"></label>
               </td>
-              <td class="random-color">
-                <input id="c4" type="checkbox" name="color"> <label for ="c4"></label>
+              <td >
+                <input id="c4" type="checkbox" name="color"> <label for ="c4" class="random-color"></label>
               </td>
             </tr>
             <tr>
               <td class="img-box" colspan="4"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image' height="300px" width="200px" >{%endif%}</td>
             </tr>
             <tr>
-              <td class="random-color">
-                <input id="c5" type="checkbox" name="color"> <label for ="c5"></label>
+              <td >
+                <input id="c5" type="checkbox" name="color"> <label for ="c5" class="random-color"></label>
               </td>
-              <td class="random-color">
-                <input id="c6" type="checkbox" name="color"> <label for ="c6"></label>
+              <td >
+                <input id="c6" type="checkbox" name="color"> <label for ="c6" class="random-color"></label>
               </td>
-              <td class="random-color">
-                <input id="c7" type="checkbox" name="color"> <label for ="c7"></label>
+              <td>
+                <input id="c7" type="checkbox" name="color"> <label for ="c7"class="random-color"></label>
               </td>
-              <td class="random-color">
-                <input id="c8" type="checkbox" name="color"> <label for ="c8"></label>
+              <td >
+                <input id="c8" type="checkbox" name="color"> <label for ="c8"class="random-color"></label>
               </td>
             </tr>
           </table> 
