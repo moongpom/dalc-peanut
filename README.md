@@ -1,6 +1,6 @@
 # dalc-peanut
 
-* git clone https://github.com/EUNDINI/dalc-peanut
+* git clone 주소
 
 * git clone 한 뒤에 순서대로 입력하기
 
@@ -42,7 +42,7 @@
 * id :dalc  #pw :aa112233    )
 
 # 헤로쿠 배포
-pip install gunicorn
-pip install dj-database-url
-pip install psycopg2-binary
-pip install whitenoise
+* pip install gunicorn
+* pip install dj-database-url
+* pip install psycopg2-binary
+* pip install whitenoise
