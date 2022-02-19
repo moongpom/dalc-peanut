@@ -22,7 +22,9 @@
 	input[name ="color"] {
 				display: none;
 			}
-
+  form {
+    margin: auto;
+  }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script> 
@@ -37,7 +39,7 @@
       }); 
 
       //색상 랜덤 Setting
-      const randomNum = () => Math.floor(Math.random() * 257);//(235 - 52 + 1) + 52)
+      const randomNum = () => Math.floor(Math.random() * 257);
       const randomRGB1 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
       const randomRGB2 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
       const randomRGB3 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
@@ -57,7 +59,19 @@
       });
   }); 
   
-  
+      function checkForm() {
+        
+       
+        const query = 'input[name="color"]:checked';
+        const selectedElements = 
+            document.querySelectorAll(query);
+        
+        const selectedElementsCnt =
+              selectedElements.length;
+        if (selectedElementsCnt == 2 )
+            {return true;}
+        else {alert("색상 두개를 선택해주세요"); return false;}
+      }
   </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
       <img src="{%static 'image/n_27.png'%}" alt="img">
@@ -65,7 +79,7 @@
           <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
           
 
-          <form method="POST" enctype="multipart/form-data">
+          <form method="POST" enctype="multipart/form-data" onsubmit="return checkForm()">
             {%csrf_token%}
           <table>
             <tr>
