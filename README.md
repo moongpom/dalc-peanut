@@ -40,3 +40,9 @@
 * -중간에 데이터날리면서 사라질경우 python manage.py createsuperuser 해서 생성해주기
 
 * id :dalc  #pw :aa112233    )
+
+# 헤로쿠 배포
+pip install gunicorn
+pip install dj-database-url
+pip install psycopg2-binary
+pip install whitenoise
