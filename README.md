@@ -1,6 +1,6 @@
 # dalc-peanut
 
-* git clone https://github.com/EUNDINI/dalc-peanut
+* git clone 주소
 
 * git clone 한 뒤에 순서대로 입력하기
 
@@ -27,6 +27,9 @@
 * python manage.py makemigrations
 
 * python manage.py migrate
+*  python manage.py makemigrations personal
+
+* python manage.py migrate personal
 
 * python manage.py runserver
 
@@ -35,8 +38,16 @@
 * pip install sklearn
 * pip install joblib
 
+# 머신러닝 실행(폴더는 프로젝트 폴더안에서)
+python personal/optimized_peanut_knn_model.py
 # 계정
 * (admin superuser 이 계정으로 로그인해도 되고 새로만들어도 됨 
 * -중간에 데이터날리면서 사라질경우 python manage.py createsuperuser 해서 생성해주기
 
 * id :dalc  #pw :aa112233    )
+
+# 헤로쿠 배포
+* pip install gunicorn
+* pip install dj-database-url
+* pip install psycopg2-binary
+* pip install whitenoise
