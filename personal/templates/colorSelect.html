@@ -11,19 +11,19 @@
     height: 200px;
   }
   input[name ="color"] + label {
-				display: inline-block;
+            display: inline-block;
         width:50px;
-				cursor: pointer;
-			}
-  input[name ="color"]:checked + label[class="random-color"] {
+            cursor: pointer;
+         }
+  input[name ="color"]:checked + label {
         height:85px;
-			}
-  td + input[name ="color"]:checked {
+         }
+  .td + input[name ="color"]:checked {
         background-color: black;
-			}
-	input[name ="color"] {
-				display: none;
-			}
+         }
+   input[name ="color"] {
+            display: none;
+         }
   form {
     margin: auto;
   }
@@ -52,18 +52,21 @@
       const randomRGB8 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
 
       //document.write(randomRGB);
-      const random = [randomRGB1,randomRGB2,randomRGB3,randomRGB4,randomRGB5,randomRGB6, randomRGB7,randomRGB8];
 
-    
-      $('.random-colorIn').each((index, data) => {
+      const random = [randomRGB1,randomRGB2,randomRGB3,randomRGB4,randomRGB5,randomRGB6, randomRGB7,randomRGB8];
+      $('.random-color').each((index, data) => {
         const $input = $(data).find('input'); 
         $(data).css({background: random[index]})
+      });
+      $('.color_td').each((index, data) => {
+        const $input = $(data).find('input'); 
         $input.val(random[index]);
       });
   }); 
   
       function checkForm() {
         
+       
         const query = 'input[name="color"]:checked';
         const selectedElements = 
             document.querySelectorAll(query);
@@ -85,16 +88,16 @@
             {%csrf_token%}
           <table>
             <tr>
-              <td class="random-colorIn" >
-              <input id="c1" type="checkbox" name="color"> <label for ="c1" class="random-color" >    </label>
+              <td class="color_td" >
+              <input id="c1" type="checkbox" name="color"> <label for ="c1"class="random-color" >    </label>
               </td>
-              <td class="random-colorIn">
+              <td class="color_td">
                 <input id="c2" type="checkbox" name="color"> <label for ="c2" class="random-color"></label>
               </td>
-              <td class="random-colorIn">
+              <td class="color_td" >
                 <input id="c3" type="checkbox" name="color"> <label for ="c3" class="random-color"></label>
               </td>
-              <td class="random-colorIn">
+              <td class="color_td" >
                 <input id="c4" type="checkbox" name="color"> <label for ="c4" class="random-color"></label>
               </td>
             </tr>
@@ -102,16 +105,16 @@
               <td class="img-box" colspan="4"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image' height="300px" width="200px" >{%endif%}</td>
             </tr>
             <tr>
-              <td class="random-colorIn">
+              <td  class="color_td">
                 <input id="c5" type="checkbox" name="color"> <label for ="c5" class="random-color"></label>
               </td>
-              <td class="random-colorIn">
+              <td  class="color_td">
                 <input id="c6" type="checkbox" name="color"> <label for ="c6" class="random-color"></label>
               </td>
-              <td class="random-colorIn">
+              <td class="color_td">
                 <input id="c7" type="checkbox" name="color"> <label for ="c7"class="random-color"></label>
               </td>
-              <td class="random-colorIn">
+              <td  class="color_td">
                 <input id="c8" type="checkbox" name="color"> <label for ="c8"class="random-color"></label>
               </td>
             </tr>
