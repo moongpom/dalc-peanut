@@ -36,6 +36,7 @@ def colorSelect1(request,imageId):
         
     else :
         if request.method == "POST":
+            
             print("request.POST['color0']",request.POST.getlist('color')[0])
             print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c1=request.POST.getlist('color')[0]
@@ -54,6 +55,7 @@ def colorSelect2(request,imageId):
         
     else :
         if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color'))
             print("request.POST['color0']",request.POST.getlist('color')[0])
             print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c3=request.POST.getlist('color')[0]
