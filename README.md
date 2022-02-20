@@ -35,7 +35,7 @@
 
 # runserver 전 수행해야할 것
 * setting.py의 secret key 수정
-* python 3.7.9 
+* python 3.7.9 다운받기
 
 # AI 관련 install 목록
 * pip install numpy
