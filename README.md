@@ -33,6 +33,10 @@
 
 * python manage.py runserver
 
+# runserver 전 수행해야할 것
+* setting.py의 secret key 수정
+* python 3.7.9 
+
 # AI 관련 install 목록
 * pip install numpy
 * pip install sklearn
