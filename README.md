@@ -36,6 +36,7 @@
 # runserver 전 수행해야할 것
 * setting.py의 secret key 수정
 * python 3.7.9 환경 변수 추가 옵션으로 다운받기 (다운 완료 후에 컴퓨터 껐다 켜야 함)
+* vscode에서 python 버전 3.7.9로 변경
 
 # AI 관련 install 목록
 * pip install numpy
