@@ -1,4 +1,4 @@
-const url = 'https://127.0.0.1:8000';
+const url = 'https://peanut-percol.herokuapp.com/';
 
 function shareKakao() {
   var shareImage = 'https://ifh.cc/g/0Jt2XM.png';
