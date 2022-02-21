@@ -1,4 +1,4 @@
-const url = 'https://peanut-percol.herokuapp.com/';
+const url = 'https://peanut-personalcolor.herokuapp.com/';
 
 function shareKakao() {
   var shareImage = 'https://ifh.cc/g/0Jt2XM.png';
