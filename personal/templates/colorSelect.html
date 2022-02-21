@@ -27,6 +27,9 @@
   form {
     margin: auto;
   }
+  .colorSelect {
+    margin: auto;
+  }
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script> 
@@ -79,14 +82,23 @@
       }
   </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
-      <img src="{%static 'image/n_27.png'%}" alt="img">
+      <a href="{% url 'index'%}"><img  src="{% static 'image/n_27.png' %}" width="180px" alt = "peanut"></a>
         <p id="subfont">
           <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
-          
-
+          <br>
+          {%if order == 1 %}
+          <img  src="{% static 'image/cs1.png' %}"  width="80px" alt = "color_select_order1">
+          {%elif order == 2 %}
+          <img  src="{% static 'image/cs2.png' %}"  width="80px" alt = "color_select_order2">
+          {%elif order == 3 %}
+          <img  src="{% static 'image/cs3.png' %}"  width="80px" alt = "color_select_order3">
+          {%elif order == 4  %}
+          <img  src="{% static 'image/cs4.png' %}"  width="80px" alt = "color_select_order4">
+          {%endif%}
           <form method="POST" enctype="multipart/form-data" onsubmit="return checkForm()">
+            
             {%csrf_token%}
-          <table>
+          <table class = "colorSelect">
             <tr>
               <td class="color_td" >
               <input id="c1" type="checkbox" name="color"> <label for ="c1"class="random-color" >    </label>
@@ -119,8 +131,7 @@
               </td>
             </tr>
           </table> 
-
-          <button type="submit" value="다음으로" class="selectbtn mx-auto">
+          <br><button type="submit" class="startBtn mx-auto" > 다음으로</button>
            
         </form>
         </p>

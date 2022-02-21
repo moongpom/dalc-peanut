@@ -35,7 +35,11 @@
         Kakao.init('97154db629d66a733ad4c48e0abb6efd');
         Kakao.isInitialized();
     </script>
-
+    <style>
+        a {
+            text-decoration: none;
+            }
+    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- 배포 후 추가 필요-->
 
@@ -51,17 +55,18 @@
     <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             <div id=" titlefont">
-		        <img src="{%static 'image/n_27.png'%}" alt="img"><br>
+                <a href="{% url 'index'%}"><img  src="{% static 'image/n_27.png' %}" width="230px" alt = "peanut"></a><br>
             </div>
 
             <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
+               
                 <img id="mainImg1" src="{%static 'image/index_image.png'%}" alt="mainImage" class="img-fluid">
             </div>
 
             <p id="subfont">
                <span>Peanut은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
             </p>
-            <button type="button" class="startBtn mx-auto" onclick="js:begin()"> <a href="{% url 'imageUpload'%}">시작하기</a></button>
+            <a href="{% url 'imageUpload'%}"><button type="button" class="startBtn mx-auto" >시작하기</button></a> 
         </section>
     </div>
 

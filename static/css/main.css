@@ -83,7 +83,6 @@ p{
 
 .selectbtn {
   text-align: center;
-
   background-color: #f6a329;
   border-radius: 20px;
   display: block;
@@ -94,7 +93,7 @@ p{
   color: white;
 }
 
-table {
+#colorSelectTable.table {
   margin-left: auto;
   margin-right: auto;
   padding:5px;
@@ -104,9 +103,25 @@ table {
   border-collapse: separate;
 }
 
-tr, td {
+#colorSelectTable.tr, #colorSelectTable.td {
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   border-spacing: 30px;
+}
+
+#resultTable {
+  margin-left: auto;
+  margin-right: auto;
+  padding:5px;
+  border-spacing: 5px;
+  border-collapse: separate;
+}
+
+#shareTable {
+  margin-left: auto;
+  margin-right: auto;
+  padding:5px;
+  border-spacing: 5px;
+  border-collapse: separate;
 }

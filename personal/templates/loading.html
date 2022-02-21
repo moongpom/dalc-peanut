@@ -3,10 +3,16 @@
 
 
 {%block content %}
+<style>
+    a {
+        text-decoration: none;
+        color : white;
+        }
+</style>
     <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">
-                <img  src="{%static 'image/n_27.png'%}" >
+                    <a href="{% url 'index'%}"><img  src="{% static 'image/n_27.png' %}" width="180px" alt = "peanut"></a>
     </div>
             <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
               <img id="resultImg" src="{%static 'image/loading.gif'%}" class="img-fluid">
@@ -14,7 +20,7 @@
             <p id="subfont">
                	<span>나의 퍼스널 컬러를<br/>분석 중이에요!<br></span> 
             </p>
-            <button type="button" class="startBtn mx-auto" onclick="js:begin()"> <a href="{% url 'result' result_val%}">결과보기</a></button>
+            <button type="button" class="startBtn mx-auto"> <a href="{% url 'result' result_val%}">결과보기</a></button>
         </section>
     </div>
 

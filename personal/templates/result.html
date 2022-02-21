@@ -4,10 +4,15 @@
 
 {%block content %}
 <!--1.봄 2. 가을 3.여름 4. 겨울-->
-
+<style>
+  a {
+      text-decoration: none;
+      color : white;
+      }
+</style>
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             	<div id=" titlefont">
-              <img id="uni"  src="{%static 'image/n_27.png'%}" >
+                <a href="{% url 'index'%}"><img  src="{% static 'image/n_27.png' %}" width="180px" alt = "peanut"></a>
               <br><br>
             </div>
             {% if result_val  == 1 %}
