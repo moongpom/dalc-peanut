@@ -16,6 +16,7 @@
 
 * pip install django  
 * pip install pillow 
+* pip install django-session-timeout
 
 * 폴더 안으로 이동 : cd dalc-peanut
 
