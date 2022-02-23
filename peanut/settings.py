@@ -72,10 +72,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
+#SESSION_EXPIRE_SECONDS = 1800  # 30분 - 1800   수정중에는 그냥 주석처리 해놓고 하는게 편함 
+#SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True 로그인 이후로 할지 아니면 마지막활동이후로할지(true)
 
 ROOT_URLCONF = 'peanut.urls'
-
+SESSION_TIMEOUT_REDIRECT = '/'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
