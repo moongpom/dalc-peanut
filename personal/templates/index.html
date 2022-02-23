@@ -33,7 +33,9 @@
     <script>
         Kakao.init('97154db629d66a733ad4c48e0abb6efd');
         Kakao.isInitialized();
+        
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>
         a {
             text-decoration: none;
@@ -54,7 +56,6 @@
 <body>
     {% if err == 1 %}
     <script >
-        alert("잘못된 접근입니다.");
         function notSes(){ 
             Swal.fire({
                     title: '잘못된 접근입니다.',
