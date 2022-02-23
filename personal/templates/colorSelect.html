@@ -94,7 +94,7 @@
     <section id="main" class="mainfont mx-auto my-5 px-3">
       <a href="{% url 'index'%}"><img  src="{% static 'image/peanutLogo.png' %}" width="180px" alt = "peanut"></a>
         <p id="subfont">
-          <span>나에게 어울리는 색상<br/>두 가지를 골라주세요</span>
+          <span>나에게 어울리는 색상<br/><span style="color:#f6a329">두 가지</span>를 골라주세요</span>
           <br>
           {%if order == 1 %}
           <img  src="{% static 'image/cs1.png' %}"  width="80px" alt = "color_select_order1">
@@ -141,7 +141,7 @@
               </td>
             </tr>
           </table> 
-          <br><button type="submit" class="startBtn mx-auto" > 다음으로</button>
+          <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
            
         </form>
         </p>

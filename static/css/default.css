@@ -1,9 +1,9 @@
 body{
-  background: #FFFAF3;
+  background: #FFFAF3;  
 }
 
 .mainfont {
-   font-family: 'Noto Sans KR', sans-serif;
+   font-family: 'Recipekorea', sans-serif;
 }
 
 #mainImg {
@@ -27,10 +27,23 @@ img {
   text-align: center;
 }
 
-@font-face {
-    font-family: 'Noto Sans KR';
-    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
-    font-weight: normal;
-    font-style: normal;
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+#notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+ font-size: 12px;
 }
 
+@font-face {
+  font-family: 'Recipekorea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CWDangamAsac-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

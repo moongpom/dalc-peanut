@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="{%static './css/default.css' %}">
     <link rel="stylesheet" href="{%static './css/main.css' %}">
     <link rel="stylesheet" href="{%static './css/animation.css' %}">
-    <link rel="stylesheet" href="{%static './css/result.css' %}">
     <script src="https://developers.kakao.com/sdk/js/kakao.js">
     </script>
     <script>
@@ -40,10 +39,16 @@
             text-decoration: none;
             }
     </style>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- 배포 후 추가 필요-->
-   
-   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GSRYNKRCVN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GSRYNKRCVN');
+    </script>
 </head>
 
 <body>
@@ -84,18 +89,17 @@
             </div>
 
             <div class="col-lg-6 col-md-8 col-sm-10 col-12 mx-auto">
-               
                 <img id="mainImg1" src="{%static 'image/index_image.png'%}" alt="mainImage" class="img-fluid">
             </div>
 
             <p id="subfont">
-               <span>Peanut은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
+               <span><span style="color:#f6a329; font-family: 'CWDangamAsac-Bold'">Peanut</span>은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
             </p>
-            <a href="{% url 'imageUpload'%}"><button type="button" class="startBtn mx-auto" >시작하기</button></a> 
+            <a href="{% url 'imageUpload'%}"><button type="button" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >시작하기</button></a> 
         </section>
     </div>
 
-    <script src="./js/share.js" charset="UTF-8"></script>	</div>
+    <script src="{%static './js/share.js' %}" charset="UTF-8"></script>	</div>
 </body>
 
 </html>
