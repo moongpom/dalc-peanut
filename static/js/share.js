@@ -34,7 +34,7 @@ function shareTwitter() {
 }
 
 function shareURL() {
-  var url = 'https://127.0.0.1:8000';
+  var url = 'https://peanut-personalcolor.herokuapp.com/';
   var textarea = document.createElement("textarea");
   document.body.appendChild(textarea);
   textarea.value = url;
