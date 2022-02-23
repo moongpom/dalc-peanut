@@ -42,13 +42,24 @@
     </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- 배포 후 추가 필요-->
-
+   
+   
 </head>
 
 <body>
     {% if err == 1 %}
-    <script type="text/javascript">
-        alert("잘못된 접근입니다.\n 메인으로 돌아갑니다");
+    <script >
+        alert("잘못된 접근입니다.");
+        function notSes(){ 
+            Swal.fire({
+                    title: '잘못된 접근입니다.',
+                    text: "메인으로 돌아갑니다",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+                    }
+        notSes();
         </script>
     
     {% elif err == 2 %}

@@ -80,15 +80,11 @@
       
       function checkForm() {
         
-       
         const query = 'input[name="color"]:checked';
-        const selectedElements = 
-            document.querySelectorAll(query);
+        const selectedElements =  document.querySelectorAll(query);
         
-        const selectedElementsCnt =
-              selectedElements.length;
-        if (selectedElementsCnt == 2 )
-            {return true;}
+        const selectedElementsCnt = selectedElements.length;
+        if (selectedElementsCnt == 2 ) {return true;}
         else { alert2(); return false;}
       }
 
