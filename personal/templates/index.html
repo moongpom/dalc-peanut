@@ -25,15 +25,18 @@
     <title>PEANUT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="{%static './css/default.css' %}">
-    <link rel="stylesheet" href="{%static './css/main.css' %}">
-    <link rel="stylesheet" href="{%static './css/animation.css' %}">
+    <link rel="stylesheet" href="{%static 'css/default2.css' %}">
+    <link rel="stylesheet" href="{%static 'css/main.css' %}">
+    <link rel="stylesheet" href="{%static 'css/animation.css' %}">
+    
     <script src="https://developers.kakao.com/sdk/js/kakao.js">
     </script>
     <script>
         Kakao.init('97154db629d66a733ad4c48e0abb6efd');
         Kakao.isInitialized();
+        
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <style>
         a {
             text-decoration: none;
@@ -53,19 +56,59 @@
 
 <body>
     {% if err == 1 %}
-    <script type="text/javascript">
-        alert("잘못된 접근입니다.\n 메인으로 돌아갑니다");
+    <script >
+        function notSes(){ 
+            Swal.fire({
+                    title: '잘못된 접근입니다.',
+                    text: "메인으로 돌아갑니다",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+                    }
+        notSes();
         </script>
     
     {% elif err == 2 %}
-    <script type="text/javascript">
-        alert("세션 정보가 없습니다.");
+    <script >
+        function notSes(){ 
+            Swal.fire({
+                    title: '세션정보가 없습니다.',
+                    text: "메인으로 돌아갑니다",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+                    }
+        notSes();
         </script>
      
      {% elif err == 3 %}
-     <script type="text/javascript">
-         alert("테이블 확인.");
-         </script>
+     <script >
+        function notSes(){ 
+            Swal.fire({
+                    title: '데이터값이 잘못되었습니다.',
+                    text: "메인으로 돌아갑니다",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+                    }
+        notSes();
+        </script>
+     {% elif err == 3 %}
+     <script >
+        function notSes(){ 
+            Swal.fire({
+                    title: '머신러닝 오류.',
+                    text: "메인으로 돌아갑니다",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+                    }
+        notSes();
+        </script>
     {%endif%}
 
     <div class="container">

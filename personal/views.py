@@ -133,44 +133,47 @@ def colorSelect(request):
 
 def loading(request,imageId):
     # 머신러닝 돌리는 중에 loading 창이 떠야 함
-    image=ImageData.objects.get(id= imageId)
-    rgbList=[]
-    rgbResult=[] #머신러닝으로 최종으로 보낼 이중리스트
-    rgbList.append(image.c1)
-    rgbList.append(image.c2)
-    rgbList.append(image.c3)
-    rgbList.append(image.c4)
-    rgbList.append(image.c5)
-    rgbList.append(image.c6)
-    rgbList.append(image.c7)
-    rgbList.append(image.c8)
+    try:
+        image=ImageData.objects.get(id= imageId)
+        rgbList=[]
+        rgbResult=[] #머신러닝으로 최종으로 보낼 이중리스트
+        rgbList.append(image.c1)
+        rgbList.append(image.c2)
+        rgbList.append(image.c3)
+        rgbList.append(image.c4)
+        rgbList.append(image.c5)
+        rgbList.append(image.c6)
+        rgbList.append(image.c7)
+        rgbList.append(image.c8)
 
-    
-    for value in rgbList:
-        value = value.lstrip('rgb(')
-        value = value.rstrip(')')
-        #print(i)
-        color = value.strip().split(',')
-        color_list=[] #각리스트
-        for i in color :
-            color_list.append(int(i))
-
-        #print(type(color_list[0]))
-        print(color_list)
-        rgbResult.append(color_list)
         
-    print("=========",rgbResult,"==========")
+        for value in rgbList:
+            value = value.lstrip('rgb(')
+            value = value.rstrip(')')
+            #print(i)
+            color = value.strip().split(',')
+            color_list=[] #각리스트
+            for i in color :
+                color_list.append(int(i))
 
-    scriptpath = os.path.dirname(__file__)
-    filename = os.path.join(scriptpath, 'optimized_peanut_knn_model.pkl')
-    model = joblib.load(filename)
-    test = np.array(rgbResult)
-    res = model.predict(test)
-    #최빈값 
-    count = Counter(res)
-    most = count.most_common(1)
-    print(most[0][0])#최종데이터
-    return render(request, "loading.html",{'result_val':most[0][0]})
+            #print(type(color_list[0]))
+            print(color_list)
+            rgbResult.append(color_list)
+            
+        print("=========",rgbResult,"==========")
+
+        scriptpath = os.path.dirname(__file__)
+        filename = os.path.join(scriptpath, 'optimized_peanut_knn_model.pkl')
+        model = joblib.load(filename)
+        test = np.array(rgbResult)
+        res = model.predict(test)
+        #최빈값 
+        count = Counter(res)
+        most = count.most_common(1)
+        print(most[0][0])#최종데이터
+        return render(request, "loading.html",{'result_val':most[0][0]})
+    except :
+                return render(request,"index.html",{'err':4})
 
 def result(request,result_val):
     # 머신러닝에서 받아온 데이터를 여기에 뽑아주기

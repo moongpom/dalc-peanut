@@ -3,6 +3,7 @@
 
 
 {%block content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <style>
   .random-color {
     height: 70px;
@@ -66,20 +67,29 @@
         $input.val(random[index]);
       });
   }); 
-  
+     function alert2(){ 
+        Swal.fire({
+                title: '색깔 2개를 골라주세요!',
+                //text: "2r개",
+                icon: 'warning',
+                //showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: '확인',
+              }) 
+                }
+      
       function checkForm() {
         
-       
         const query = 'input[name="color"]:checked';
-        const selectedElements = 
-            document.querySelectorAll(query);
+        const selectedElements =  document.querySelectorAll(query);
         
-        const selectedElementsCnt =
-              selectedElements.length;
-        if (selectedElementsCnt == 2 )
-            {return true;}
-        else {alert("색상 두개를 선택해주세요"); return false;}
+        const selectedElementsCnt = selectedElements.length;
+        if (selectedElementsCnt == 2 ) {return true;}
+        else { alert2(); return false;}
       }
+
+      
+  
   </script>
     <section id="main" class="mainfont mx-auto my-5 px-3">
       <a href="{% url 'index'%}"><img  src="{% static 'image/peanutLogo.png' %}" width="180px" alt = "peanut"></a>
