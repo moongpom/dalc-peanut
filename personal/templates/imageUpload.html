@@ -17,14 +17,14 @@
 <br><br>
      
             <p id="subfont">
-                <span>분석할 이미지를<br/>선택해주세요.</span>
+                <span>분석할 <span style="color:#f6a329">이미지</span>를<br/>선택해주세요.</span>
             </p> 
             <img  src="{% static 'image/imgcl.png' %}" alt="img"  id="mainImg1">
            
             <form method="post" enctype="multipart/form-data">
                 {%csrf_token%}
                 {{ form }}
-                <br> <br><button type="submit" class="startBtn mx-auto" > 다음으로</button>
+                <br> <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
             </form>
             <br>
            
