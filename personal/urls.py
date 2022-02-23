@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from personal.views import *
+from personal.models import *
 urlpatterns = [
     path('imageUpload/',imageUpload,name="imageUpload"),
 
