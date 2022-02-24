@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render,redirect
 from .forms import *
 from .models import ImageData
 from django.utils import timezone
@@ -23,12 +23,13 @@ def imageUpload(request):
             imgForm.upload_date = timezone.now() 
             imgForm.sessionData = request.session.session_key
             print("세션확인 --")
-            print("imgForm.sessionData",imgForm.sessionData , "request.session.session_key",request.session.session_key) 
+            print("imgForm.sessionData",imgForm.sessionData ) 
+            print("request.session.session_key",request.session.session_key) 
             try :
                 imgForm.save()
                 return redirect("colorSelect1",imgForm.id)
             except :
-                return render(request,"index.html",{'err':2})
+                return render(request,"index.html",{'err':5})
 
     else:
         image_form = ImageForm()
@@ -146,8 +147,9 @@ def loading(request,imageId):
         most = count.most_common(1)
         print(most[0][0])#최종데이터
         return render(request, "loading.html",{'result_val':most[0][0]})
+
     except :
-                return render(request,"index.html",{'err':4})
+        return render(request,"index.html",{'err':4})
 
 def result(request,result_val):
     print("@@@@@@@@최종결과값",result_val)

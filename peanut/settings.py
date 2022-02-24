@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-#SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
-
+'''
 from pathlib import Path
 import os, json
 from django.core.exceptions import ImproperlyConfigured
@@ -43,7 +43,7 @@ def get_secret(setting, secrets=secrets):
         raise ImproperlyConfigured(error_msg)
 
 SECRET_KEY = get_secret("SECRET_KEY")
-
+'''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
@@ -74,7 +74,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django_session_timeout.middleware.SessionTimeoutMiddleware',
 ]
-#SESSION_EXPIRE_SECONDS = 1800  # 30분 - 1800   수정중에는 그냥 주석처리 해놓고 하는게 편함 
+SESSION_EXPIRE_SECONDS = 1800  # 30분 - 1800   수정중에는 그냥 주석처리 해놓고 하는게 편함 
 #SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True 로그인 이후로 할지 아니면 마지막활동이후로할지(true)
 
 ROOT_URLCONF = 'peanut.urls'

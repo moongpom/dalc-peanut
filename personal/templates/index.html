@@ -98,7 +98,7 @@
                     }
         notSes();
         </script>
-     {% elif err == 3 %}
+     {% elif err == 4 %}
      <script >
         function notSes(){ 
             Swal.fire({
@@ -111,6 +111,19 @@
                     }
         notSes();
         </script>
+    {% elif err == 5 %}
+    <script >
+       function notSes(){ 
+           Swal.fire({
+                   title: '사진오류. 올바른 사진을 올려주세요.',
+                   text: "메인으로 돌아갑니다",
+                   icon: 'warning',
+                   confirmButtonColor: '#3085d6',
+                   confirmButtonText: '확인',
+               }) 
+                   }
+       notSes();
+       </script>
     {%endif%}
 
     <div class="container">
