@@ -7,6 +7,14 @@
         a {
             text-decoration: none;
             }
+        form {
+            margin : auto;
+        }
+        /*.uploadImage{
+            margin-left: 20%;
+        }*/
+        #mainImg1{margin-bottom: 4%;
+            margin-top: 3%;}
     </style>
       
        <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
@@ -19,11 +27,11 @@
             <p id="subfont">
                 <span>분석할 <span style="color:#f6a329">이미지</span>를<br/>선택해주세요.</span>
             </p> 
-            <img  src="{% static 'image/imgcl.png' %}" alt="img"  id="mainImg1">
+            <img  src="{% static 'image/clcl.png' %}" alt="img"  id="mainImg1">
            
             <form method="post" enctype="multipart/form-data">
                 {%csrf_token%}
-                {{ form }}
+                <span class="uploadImage">{{ form.image }}</span>
                 <br> <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
             </form>
             <br>
