@@ -51,7 +51,7 @@ def colorSelect1(request,imageId):
             except :
                 return render(request,"index.html",{'err':3})
         else : 
-            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId})
+            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId,'order':1})
 
 def colorSelect2(request,imageId):
 
