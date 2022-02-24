@@ -19,18 +19,10 @@ from personal.views import *
 from personal.models import *
 urlpatterns = [
     path('imageUpload/',imageUpload,name="imageUpload"),
-
-    # 나중에는 아래에 주석 있는 애 풀고 커밋
-    #path('colorSelect/', colorSelect, name="colorSelect"),
-
     path('colorSelect1/<int:imageId>',colorSelect1,name="colorSelect1"),
     path('colorSelect2/<int:imageId>',colorSelect2,name="colorSelect2"),
     path('colorSelect3/<int:imageId>',colorSelect3,name="colorSelect3"),
     path('colorSelect4/<int:imageId>',colorSelect4,name="colorSelect4"),
-    # #최종 결과에서는 이미지 아이디 넘겨주기
-    # #path('result/<int:imageId>',result,name="result"),
-
-
     path('result/<int:result_val>', result, name="result"),
     path('loading/<int:imageId>', loading, name="loading"),
 ]
