@@ -2,21 +2,21 @@ body{
     background: #FFFAF3;  
   }
   
-  .mainfont {
+  .mainfont{
      font-family: 'Recipekorea', sans-serif;
   }
   
-  #mainImg {
+  #mainImg{
     width: 90%;
     height: auto;
   }
   
-  #resultImg {
+  #resultImg{
     width: 100%;
     height: auto;
   }
   
-  #shareImg {
+  #shareImg{
     width: 50px;
     height: 50px;
     margin-top: 10%;
