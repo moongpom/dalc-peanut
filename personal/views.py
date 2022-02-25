@@ -135,22 +135,26 @@ def loading(request,imageId):
             rgbResult.append(color_list)
             
         print("=========",rgbResult,"==========")
-
-        #머신러닝 작동
-        scriptpath = os.path.dirname(__file__)
-        filename = os.path.join(scriptpath, 'optimized_peanut_knn_model.pkl')
-        model = joblib.load(filename)
-        test = np.array(rgbResult)
-        res = model.predict(test)
-        #최빈값 
-        count = Counter(res)
-        most = count.most_common(1)
-        print(most[0][0])#최종데이터
-        return render(request, "loading.html",{'result_val':most[0][0]})
-
+        try:
+            #머신러닝 작동
+            scriptpath = os.path.dirname(__file__)
+            filename = os.path.join(scriptpath, 'optimized_peanut_knn_model.pkl')
+            model = joblib.load(filename)
+            test = np.array(rgbResult)
+            res = model.predict(test)
+            #최빈값 
+            count = Counter(res)
+            most = count.most_common(1)
+            print(most[0][0])#최종데이터
+            return render(request, "loading.html",{'result_val':most[0][0]})
+        except :
+            return render(request,"index.html",{'err':3})
     except :
         return render(request,"index.html",{'err':4})
 
 def result(request,result_val):
-    print("@@@@@@@@최종결과값",result_val)
-    return render(request,"result.html",{'result_val':result_val})
+    try:
+        print("@@@@@@@@최종결과값",result_val)
+        return render(request,"result.html",{'result_val':result_val})
+    except :
+        return render(request,"index.html",{'err':3})
