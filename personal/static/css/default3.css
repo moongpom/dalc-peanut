@@ -1,0 +1,42 @@
+body{
+  background: #FFFAF3;  
+}
+
+.mainfont {
+   font-family: 'Recipekorea', sans-serif;
+}
+
+#mainImg {
+  width: 90%;
+  height: auto;
+}
+
+#resultImg {
+  width: 100%;
+  height: auto;
+}
+
+#shareImg {
+  width: 50px;
+  height: 50px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+img {
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Recipekorea';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Recipekorea.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CWDangamAsac-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
