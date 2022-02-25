@@ -18,7 +18,7 @@ function shareKakao() {
     },
     buttons: [
       {
-        title: '확인하기',
+        title: '진단받기',
         link: {
           mobileWebUrl: url,
           webUrl: url
@@ -29,7 +29,7 @@ function shareKakao() {
 }
 
 function shareTwitter() {
-    var sendText = "#퍼스널컬러 #테스트 #peanut";
+    var sendText = "퍼스널컬러 테스트 peanut";
     window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + url);
 }
 
