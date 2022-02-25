@@ -41,8 +41,16 @@
         <img id="mainImg1" src="{%static 'image/mainpeanut.png'%}" alt="mainImage" class="img-fluid">
     </div>
     <p id="subfont">
-       <span><span style="color:#f6a329; font-family: 'CWDangamAsac-Bold'">Peanut</span>은 퍼스널컬러를 쉽게<br/>진단할 수 있는 서비스입니다.</span>
+       <span>
+           <span style="color:#f6a329; font-family: 'CWDangamAsac-Bold'">
+            Peanut
+            </span>
+           은 퍼스널컬러를 쉽게<br/>
+           진단할 수 있는 서비스입니다.
+        </span>
     </p>
-    <a href="{% url 'imageUpload'%}"><button type="button" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >시작하기</button></a> 
+    <a href="{% url 'imageUpload'%}">
+        <button type="button" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >시작하기</button>
+    </a> 
         
 {%endblock%}

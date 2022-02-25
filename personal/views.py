@@ -52,7 +52,11 @@ def colorSelect1(request,imageId):
             except :
                 return render(request,"index.html",{'err':3})
         else : 
-            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId,'order':1})
+            context = {}
+            context['imageContents'] = image
+            context['imageId'] = imageId
+            context['order'] = 1
+            return render(request,"colorSelect.html",context)
 
 def colorSelect2(request,imageId):
 
@@ -71,7 +75,11 @@ def colorSelect2(request,imageId):
             image.save()
             return redirect("colorSelect3",imageId)
         else : 
-            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId,'order':2})
+            context = {}
+            context['imageContents'] = image
+            context['imageId'] = imageId
+            context['order'] = 2
+            return render(request,"colorSelect.html",context)
 
 def colorSelect3(request,imageId):
     
@@ -88,7 +96,11 @@ def colorSelect3(request,imageId):
             image.save()
             return redirect("colorSelect4",imageId)
         else : 
-            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId,'order':3})
+            context = {}
+            context['imageContents'] = image
+            context['imageId'] = imageId
+            context['order'] = 3
+            return render(request,"colorSelect.html",context)
 
 def colorSelect4(request,imageId):
     
@@ -105,7 +117,11 @@ def colorSelect4(request,imageId):
             image.save()
             return redirect("loading",imageId)
         else : 
-            return render(request,"colorSelect.html",{'imageContents':image,'imageId':imageId,'order':4})
+            context = {}
+            context['imageContents'] = image
+            context['imageId'] = imageId
+            context['order'] = 4
+            return render(request,"colorSelect.html",context)
 
 def loading(request,imageId):
    
