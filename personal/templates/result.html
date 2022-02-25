@@ -10,11 +10,7 @@
       color : white;
       }
 </style>
-        <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
-            	<div id=" titlefont">
-                <a href="{% url 'index'%}"><img  src="{% static 'image/peanutLogo.png' %}" width="180px" alt = "peanut"></a>
-              <br><br>
-            </div>
+    <br>
             {% if result_val  == 1 %}
             <p id="subfont">
               <span>나의 퍼스널 컬러는<br/><span style="color:#fe2975"><b>봄 웜</b></span><br></span> 
@@ -329,5 +325,4 @@
                 <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">URL공유</span></td>
               </tr>
             </table>
-        </section>
         {%endblock%}

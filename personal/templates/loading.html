@@ -10,11 +10,7 @@
         }
 
 </style>
-    <div class="container">
-        <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
-            	<div id=" titlefont">
-                    <a href="{% url 'index'%}"><img  src="{% static 'image/peanutLogo.png' %}" width="180px" alt = "peanut"></a>
-    </div>
+    
             <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
               <img id="resultImg" src="{%static 'image/loading.gif'%}" class="img-fluid">
             </div>
@@ -23,7 +19,5 @@
             </p>
             <br><br>
             <a href="{% url 'result' result_val%}"><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >  결과보기</button></a>
-        </section>
-    </div>
-
+     
 {%endblock%}
