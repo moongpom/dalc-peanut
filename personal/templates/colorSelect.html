@@ -1,27 +1,25 @@
 {%extends 'base.html'%}
 {% load static %}
 
-
 {%block content %}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <style>
   .random-color {
     height:56px;
     border-radius: 10%;
   }
   input[name ="color"] + label {
-            display: inline-block;
-        width:56px;
-            cursor: pointer;
-         }
+    display: inline-block;
+    width:56px;
+    cursor: pointer;
+  }
   input[name ="color"]:checked + label {
-        /*height:65px;*/
-        /*opacity: 0.7;*/
-        border: 2px solid black;
-         }
-   input[name ="color"] {
-            display: none;
-         }
+    /*height:65px;*/
+    /*opacity: 0.7;*/
+    border: 2px solid black;
+   }
+  input[name ="color"] {
+    display: none;
+    }
   .colorSelect {
     margin: auto;
   }
@@ -41,125 +39,121 @@
   img {border-radius: 3%;}
   .order{margin-top: 10px;}
 </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script> 
-
   $(document).ready(function(){ 
-      $("input[type='checkbox']").on("click" , function(){ 
-          var count = $("input:checked[type='checkbox']").length; 
-              if(count > 2){ 
-                  this.checked=false;
-                  alertMax(); 
-            }       
+    $("input[type='checkbox']").on("click" , function(){ 
+        var count = $("input:checked[type='checkbox']").length; 
+          if(count > 2){ 
+            this.checked=false;
+            alertMax(); 
+          }       
       }); 
-      function alertMax(){ 
-        Swal.fire({
-                title: '최대 두가지의 색상만 선택할 수 있습니다!',
-                //text: "2r개",
-                icon: 'warning',
-                //showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: '확인',
-              }) 
-                }
-      //색상 랜덤 Setting
-      const randomNum = () => Math.floor(Math.random() * 257);
-      const randomRGB1 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB2 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB3 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB4 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB5 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB6 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB7 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-      const randomRGB8 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
-
-      //document.write(randomRGB);
-
-      const random = [randomRGB1,randomRGB2,randomRGB3,randomRGB4,randomRGB5,randomRGB6, randomRGB7,randomRGB8];
-      $('.random-color').each((index, data) => {
-        const $input = $(data).find('input'); 
-        $(data).css({background: random[index]})
+    function alertMax(){ 
+      Swal.fire({
+              title: '최대 두가지의 색상만 선택할 수 있습니다!',
+              icon: 'warning',
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: '확인',
+            }) 
+        }
+    //색상 랜덤 Setting
+    const randomNum = () => Math.floor(Math.random() * 257);
+    const randomRGB1 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB2 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB3 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB4 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB5 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB6 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB7 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    const randomRGB8 = `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})`
+    //document.write(randomRGB);
+    const random = [randomRGB1,randomRGB2,randomRGB3,randomRGB4,randomRGB5,randomRGB6, randomRGB7,randomRGB8];
+      
+    $('.random-color').each((index, data) => {
+      const $input = $(data).find('input'); 
+      $(data).css({background: random[index]})
       });
-      $('.color_td').each((index, data) => {
+    $('.color_td').each((index, data) => {
         const $input = $(data).find('input'); 
         $input.val(random[index]);
       });
   }); 
-     function alert2(){ 
-        Swal.fire({
-                title: '두 가지 색상을 골라주세요!',
-                //text: "2r개",
-                icon: 'warning',
-                //showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: '확인',
-              }) 
-                }
-      
-      function checkForm() {
-        
-        const query = 'input[name="color"]:checked';
-        const selectedElements =  document.querySelectorAll(query);
-        
-        const selectedElementsCnt = selectedElements.length;
-        if (selectedElementsCnt == 2 ) {return true;}
-        else { alert2(); return false;}
-      }
-
-      
+     
+     
+  function alert2(){ 
+    Swal.fire({
+            title: '두 가지 색상을 골라주세요!',
+            //text: "2r개",
+            icon: 'warning',
+            //showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: '확인',
+          }) 
+  }
   
+  function checkForm() {
+        
+    const query = 'input[name="color"]:checked';
+    const selectedElements =  document.querySelectorAll(query);
+    
+    const selectedElementsCnt = selectedElements.length;
+    if (selectedElementsCnt == 2 ) {return true;}
+    else { alert2(); return false;}
+    }
+
   </script>
    
-        <p id="subfont">
-          <span>나에게 어울리는 색상<br/><span style="color:#f6a329">두 가지</span>를 골라주세요</span>
-          <br>
-          {%if order == 1 %}
-          <img  class = "order"src="{% static 'image/cs1.png' %}"  width="80px" alt = "color_select_order1">
-          {%elif order == 2 %}
-          <img  class = "order" src="{% static 'image/cs2.png' %}"  width="80px" alt = "color_select_order2">
-          {%elif order == 3 %}
-          <img  class = "order" src="{% static 'image/cs3.png' %}"  width="80px" alt = "color_select_order3">
-          {%elif order == 4  %}
-          <img class = "order"  src="{% static 'image/cs4.png' %}"  width="80px" alt = "color_select_order4">
-          {%endif%}
-          <form method="POST" enctype="multipart/form-data" onsubmit="return checkForm()">
-            
-            {%csrf_token%}
-          <table class = "colorSelect">
-            <tr>
-              <td class="color_td color_td1" >
-              <input id="c1" type="checkbox" name="color"> <label for ="c1"class="random-color c1" >    </label>
-              </td>
-              <td class="color_td color_td2">
-                <input id="c2" type="checkbox" name="color"> <label for ="c2" class="random-color"></label>
-              </td>
-              <td class="color_td color_td3" >
-                <input id="c3" type="checkbox" name="color"> <label for ="c3" class="random-color"></label>
-              </td>
-              <td class="color_td color_td4" >
-                <input id="c4" type="checkbox" name="color"> <label for ="c4" class="random-color"></label>
-              </td>
-            </tr>
-            <tr>
-              <td class="img-box" colspan="4"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image' height="250px" width="250px" >{%endif%}</td>
-            </tr>
-            <tr >
-              <td  class="color_td  color_td1 under" >
-                <input id="c5" type="checkbox" name="color"> <label for ="c5" class="random-color"></label>
-              </td>
-              <td  class="color_td color_td2 under" >
-                <input id="c6" type="checkbox" name="color"> <label for ="c6" class="random-color"></label>
-              </td>
-              <td class="color_td color_td3 under">
-                <input id="c7" type="checkbox" name="color"> <label for ="c7"class="random-color"></label>
-              </td>
-              <td  class="color_td color_td4 under">
-                <input id="c8" type="checkbox" name="color"> <label for ="c8"class="random-color"></label>
-              </td>
-            </tr>
-          </table> 
-          <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
-           
-        </form>
-        </p>
-    {%endblock%}
+  <p id="subfont">
+    <span>나에게 어울리는 색상<br/><span style="color:#f6a329">두 가지</span>를 골라주세요</span>
+    <br>
+    {%if order == 1 %}
+    <img  class = "order"src="{% static 'image/cs1.png' %}"  width="80px" alt = "color_select_order1">
+    {%elif order == 2 %}
+    <img  class = "order" src="{% static 'image/cs2.png' %}"  width="80px" alt = "color_select_order2">
+    {%elif order == 3 %}
+    <img  class = "order" src="{% static 'image/cs3.png' %}"  width="80px" alt = "color_select_order3">
+    {%elif order == 4  %}
+    <img class = "order"  src="{% static 'image/cs4.png' %}"  width="80px" alt = "color_select_order4">
+    {%endif%}
+    <form method="POST" enctype="multipart/form-data" onsubmit="return checkForm()">
+      
+      {%csrf_token%}
+    <table class = "colorSelect">
+      <tr>
+        <td class="color_td color_td1" >
+        <input id="c1" type="checkbox" name="color"> <label for ="c1"class="random-color c1" >    </label>
+        </td>
+        <td class="color_td color_td2">
+          <input id="c2" type="checkbox" name="color"> <label for ="c2" class="random-color"></label>
+        </td>
+        <td class="color_td color_td3" >
+          <input id="c3" type="checkbox" name="color"> <label for ="c3" class="random-color"></label>
+        </td>
+        <td class="color_td color_td4" >
+          <input id="c4" type="checkbox" name="color"> <label for ="c4" class="random-color"></label>
+        </td>
+      </tr>
+      <tr>
+        <td class="img-box" colspan="4"> {% if imageContents.image %} <img src={{imageContents.image.url}} alt='image' height="250px" width="250px" >{%endif%}</td>
+      </tr>
+      <tr >
+        <td  class="color_td  color_td1 under" >
+          <input id="c5" type="checkbox" name="color"> <label for ="c5" class="random-color"></label>
+        </td>
+        <td  class="color_td color_td2 under" >
+          <input id="c6" type="checkbox" name="color"> <label for ="c6" class="random-color"></label>
+        </td>
+        <td class="color_td color_td3 under">
+          <input id="c7" type="checkbox" name="color"> <label for ="c7"class="random-color"></label>
+        </td>
+        <td  class="color_td color_td4 under">
+          <input id="c8" type="checkbox" name="color"> <label for ="c8"class="random-color"></label>
+        </td>
+      </tr>
+    </table> 
+    <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
+     
+  </form>
+  </p>
+{%endblock%}

@@ -9,19 +9,18 @@
             margin-top: 3%;
         }
     </style>
-  			<br><br>
-            <p id="subfont">
-                <span>분석할 <span style="color:#f6a329">이미지</span>를<br/>선택해주세요.</span>
-            </p> 
-
-            <img  src="{% static 'image/clcl.png' %}" alt="img"  id="mainImg1">
-           
-            <form method="post" enctype="multipart/form-data">
-                {%csrf_token%}
-                <span class="uploadImage">{{ form.image }}</span>
-                <br> <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
-            </form>
-            <br>
+  	<br><br>
+    <p id="subfont">
+        <span>분석할 <span style="color:#f6a329">이미지</span>를<br/>선택해주세요.</span>
+    </p>
+    <img  src="{% static 'image/clcl.png' %}" alt="img"  id="mainImg1">
+    
+    <form method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <span class="uploadImage">{{ form.image }}</span>
+        <br> <br><button type="submit" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" > 다음으로</button>
+    </form>
+    <br>
            
     {%endblock%}
      

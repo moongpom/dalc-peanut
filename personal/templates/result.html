@@ -4,325 +4,315 @@
 
 {%block content %}
 <!--1.봄 2. 가을 3.여름 4. 겨울-->
-<style>
-  a {
-      text-decoration: none;
-      color : white;
-      }
-</style>
+
     <br>
-            {% if result_val  == 1 %}
-            <p id="subfont">
-              <span>나의 퍼스널 컬러는<br/><span style="color:#fe2975"><b>봄 웜</b></span><br></span> 
-            </p>
+ {% if result_val  == 1 %}
+ <p id="subfont">
+   <span>나의 퍼스널 컬러는<br/><span style="color:#fe2975"><b>봄 웜</b></span><br></span> 
 
-            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
-              <img id="resultImg" src="{%static 'image/spring1.png'%}" alt="mainImage" class="img-fluid">
-            </div>
-            
-            <table id="resultTable">
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#fe2975"><b>봄 웜</b></span>와 어울리는 색상</td>
-              </tr>
-              <tr>
-                <td>
-                  <div id="color" style="background-color:#FF9898; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FF9898</span></td>
-                <td>
-                  <div id="color" style="background-color:#FFE98D; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFE98D</span></td>
-              </tr>
-              <tr>
-                <td >
-                  <div id="color" style="background-color:#0AB8E2; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#0AB8E2</span></td>
-                <td>
-                  <div id="color" style="background-color:#E7C587; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E7C587</span></td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#fe2975"><b>봄 웜</b></span>와 반대되는 색상</td>
-              </tr>
-              <tr>
-                <td>
-                  <div id="color" style="background-color:#6E5196; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6E5196</span></td>
-                <td>
-                  <div id="color" style="background-color:#77936A; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#77936A</span></td>
-                </tr>
-                <tr>
-                 <td>
-                  <div id="color" style="background-color:#E8C271; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-              
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#77936A</span></td>
-                <td>
-                  <div id="color" style="background-color:#DA5261; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#DA5261</span></td>
-              </tr>
-            </table>
-            {%endif%}
+ <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+   <img id="resultImg" src="{%static 'image/spring1.png'%}" alt="mainImage" class="img-fluid">
+ </div>
+ 
+ <table id="resultTable">
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#fe2975"><b>봄 웜</b></span>와 어울리는 색상</td>
+   </tr>
+   <tr>
+     <td>
+       <div id="color" style="background-color:#FF9898; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FF9898</span></td>
+     <td>
+       <div id="color" style="background-color:#FFE98D; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFE98D</span></td>
+   </tr>
+   <tr>
+     <td >
+       <div id="color" style="background-color:#0AB8E2; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#0AB8E2</span></td>
+     <td>
+       <div id="color" style="background-color:#E7C587; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E7C587</span></td>
+   </tr>
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#fe2975"><b>봄 웜</b></span>와 반대되는 색상</td>
+   </tr>
+   <tr>
+     <td>
+       <div id="color" style="background-color:#6E5196; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6E5196</span></td>
+     <td>
+       <div id="color" style="background-color:#77936A; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#77936A</span></td>
+     </tr>
+     <tr>
+      <td>
+       <div id="color" style="background-color:#E8C271; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+   
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#77936A</span></td>
+     <td>
+       <div id="color" style="background-color:#DA5261; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#DA5261</span></td>
+   </tr>
+ </table>
+ {%endif%}
+ {% if result_val  == 3 %}
+ <p id="subfont">
+   <span>나의 퍼스널 컬러는<br/><span style="color:#0cc643"><b>여름 쿨</b></span><br></span> 
 
-            {% if result_val  == 3 %}
-            <p id="subfont">
-              <span>나의 퍼스널 컬러는<br/><span style="color:#0cc643"><b>여름 쿨</b></span><br></span> 
-            </p>
+ <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+   <img id="resultImg" src="{%static 'image/summer1.png'%}" alt="mainImage" class="img-fluid">
+ </div>
+ 
+ <table id="resultTable">
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#0cc643"><b>여름 쿨</b></span>과 어울리는 색상</td>
+   </tr>
+   <tr>
+     <td >
+       <div id="color" style="background-color:#00ABBD; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#00ABBD</span></td>
+     <td>
+       <div id="color" style="background-color:#6E99C2; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6E99C2</span></td>
+     </tr>
+     <tr>
+      <td >
+       <div id="color" style="background-color:#D8C8C9; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+   
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#D8C8C9</span></td>
+     <td>
+       <div id="color" style="background-color:#E8D0E3; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E8D0E3</span></td>
+   </tr>
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#0cc643"><b>여름 쿨</b></span>과 반대되는 색상</td>
+   </tr>
+   <tr>
+     <td>
+       <div id="color" style="background-color:#24BFF5; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#24BFF5</span></td>
+     <td>
+       <div id="color" style="background-color:#3E8F8E; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#3E8F8E</span></td>
+     </tr>
+     <tr>
+      <td>
+       <div id="color" style="background-color:#F9DF94; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#F9DF94</span></td>
+     <td>
+       <div id="color" style="background-color:#F39E89; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#F39E89</span></td>
+   </tr>
+ </table>
+ {%endif%}
+ {% if result_val  == 2 %}
+ <p id="subfont">
+   <span>나의 퍼스널 컬러는<br/><span style="color:#dd4400"><b>가을 웜</b></span><br></span> 
 
-            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
-              <img id="resultImg" src="{%static 'image/summer1.png'%}" alt="mainImage" class="img-fluid">
-            </div>
-            
-            <table id="resultTable">
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#0cc643"><b>여름 쿨</b></span>과 어울리는 색상</td>
-              </tr>
-              <tr>
-                <td >
-                  <div id="color" style="background-color:#00ABBD; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#00ABBD</span></td>
-                <td>
-                  <div id="color" style="background-color:#6E99C2; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6E99C2</span></td>
-                </tr>
-                <tr>
-                 <td >
-                  <div id="color" style="background-color:#D8C8C9; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-              
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#D8C8C9</span></td>
-                <td>
-                  <div id="color" style="background-color:#E8D0E3; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E8D0E3</span></td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#0cc643"><b>여름 쿨</b></span>과 반대되는 색상</td>
-              </tr>
-              <tr>
-                <td>
-                  <div id="color" style="background-color:#24BFF5; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#24BFF5</span></td>
-                <td>
-                  <div id="color" style="background-color:#3E8F8E; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#3E8F8E</span></td>
-                </tr>
-                <tr>
-                 <td>
-                  <div id="color" style="background-color:#F9DF94; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#F9DF94</span></td>
-                <td>
-                  <div id="color" style="background-color:#F39E89; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#F39E89</span></td>
-              </tr>
-            </table>
-            {%endif%}
-            {% if result_val  == 2 %}
-            <p id="subfont">
-              <span>나의 퍼스널 컬러는<br/><span style="color:#dd4400"><b>가을 웜</b></span><br></span> 
-            </p>
+ <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+   <img id="resultImg" src="{%static 'image/autumn1.png'%}" alt="mainImage" class="img-fluid">
+ </div>
+ 
+ <table id="resultTable">
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#dd4400"><b>가을 웜</b></span>과 어울리는 색상</td>
+   </tr>
+   <tr>
+     <td >
+       <div id="color" style="background-color:#6A489D; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6A489D</span></td>
+     <td>
+       <div id="color" style="background-color:#ACD1A5; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#ACD1A5</span></td>
+     </tr>
+      <tr>
+      <td >
+       <div id="color" style="background-color:#EDBEA2; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#EDBEA2</span></td>
+     <td>
+       <div id="color" style="background-color:#A48B53; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#A48B53</span></td>
+   </tr>
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#dd4400"><b>가을 웜</b></span>과 반대되는 색상</td>
+   </tr>
+   <tr>
+     <td>
+       <div id="color" style="background-color:#81C46E; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#81C46E</span></td>
+     <td>
+       <div id="color" style="background-color:#6DCEF2; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6DCEF2</span></td>
+     </tr>
+     <tr>
+      <td>
+       <div id="color" style="background-color:#FFFDD7; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFFDD7</span></td>
+     <td>
+       <div id="color" style="background-color:#E76C5C; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E76C5C</span></td>
+   </tr>
+ </table>
+ {%endif%}
+ {% if result_val  == 4 %}
+ <p id="subfont">
+   <span>나의 퍼스널 컬러는<br/><span style="color:#003ffc"><b>겨울 쿨</b></span><br></span> 
 
-            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
-              <img id="resultImg" src="{%static 'image/autumn1.png'%}" alt="mainImage" class="img-fluid">
-            </div>
-            
-            <table id="resultTable">
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#dd4400"><b>가을 웜</b></span>과 어울리는 색상</td>
-              </tr>
-              <tr>
-                <td >
-                  <div id="color" style="background-color:#6A489D; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6A489D</span></td>
-                <td>
-                  <div id="color" style="background-color:#ACD1A5; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#ACD1A5</span></td>
-                </tr>
-                 <tr>
-                 <td >
-                  <div id="color" style="background-color:#EDBEA2; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#EDBEA2</span></td>
-                <td>
-                  <div id="color" style="background-color:#A48B53; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#A48B53</span></td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#dd4400"><b>가을 웜</b></span>과 반대되는 색상</td>
-              </tr>
-              <tr>
-                <td>
-                  <div id="color" style="background-color:#81C46E; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#81C46E</span></td>
-                <td>
-                  <div id="color" style="background-color:#6DCEF2; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#6DCEF2</span></td>
-                </tr>
-                <tr>
-                 <td>
-                  <div id="color" style="background-color:#FFFDD7; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFFDD7</span></td>
-                <td>
-                  <div id="color" style="background-color:#E76C5C; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#E76C5C</span></td>
-              </tr>
-            </table>
-            {%endif%}
-            {% if result_val  == 4 %}
-            <p id="subfont">
-              <span>나의 퍼스널 컬러는<br/><span style="color:#003ffc"><b>겨울 쿨</b></span><br></span> 
-            </p>
-
-            <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
-              <img id="resultImg" src="{%static 'image/winter1.png'%}" alt="mainImage" class="img-fluid">
-            </div>
-            
-            <table id="resultTable">
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#003ffc"><b>겨울 쿨</b></span>과 어울리는 색상</td>
-              </tr>
-              <tr>
-                <td >
-                  <div id="color" style="background-color:#FFF9AC; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFF9AC</span></td>
-                <td>
-                  <div id="color" style="background-color:#2E479B; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#2E479B</span></td>
-                </tr>
-                <tr>
-                 <td >
-                  <div id="color" style="background-color:#EEABCE; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-              
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#EEABCE</span></td>
-                <td>
-                  <div id="color" style="background-color:#BDBEC0; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#BDBEC0</span></td>
-              </tr>
-              <tr>
-                <td colspan="4">
-                  <span style="display: inline-block; height: 1%;"></span>
-                </td>
-              </tr>
-              <tr><td colspan="4">
-                <span style="color:#003ffc"><b>겨울 쿨</b></span>과 반대되는 색상</td>
-              </tr>
-              <tr>
-                <td>
-                  <div id="color" style="background-color:#BC63AF; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#BC63AF</span></td>
-                <td>
-                  <div id="color" style="background-color:#5FD4FF; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#5FD4FF</span></td>
-                 </tr>
-              <tr>
-                 <td>
-                  <div id="color" style="background-color:#FFEc6A; width:50px; height: 50px; border-radius:50%;" >
-                  </div>
-                </td>
-             
-                <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFEc6A</span></td>
-                <td>
-                  <div id="color" style="background-color:#FD745D; width:50px; height: 50px; border-radius:50%;" ></div>
-                </td>
-                 <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FD745D</span></td>
-              </tr>
-            </table>
-            {%endif%}
-            <br>
-            <table id="shareTable">
-              <tr>
-                <td colspan="3">
-                  <a href="{% url 'index'%}"> <button type="button" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >다시하기</button></a>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3"><br><span style="font-family: 'Recipekorea'; color:#f6a329" >공유하기</span></br></td>
-              </tr>
-              <tr>
-                <td><img id="shareImg" src="{%static 'image/kakaotalk.png'%}" onclick="js:shareKakao()"></td>
-                <td><img id="shareImg" src="{%static 'image/twitter.png'%}" onclick="js:shareTwitter()" /></td>
-                <td><img id="shareImg" src="{%static 'image/url.png'%}" onclick="js:shareURL()" /></td>
-              </tr>
-              <tr>
-                <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">카카오톡</span></td>
-                <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">트위터</span></td>
-                <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">URL공유</span></td>
-              </tr>
-            </table>
-        {%endblock%}
+ <div class="col-lg-4 col-md-5 col-sm-6 col-8 mx-auto">
+   <img id="resultImg" src="{%static 'image/winter1.png'%}" alt="mainImage" class="img-fluid">
+ </div>
+ 
+ <table id="resultTable">
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#003ffc"><b>겨울 쿨</b></span>과 어울리는 색상</td>
+   </tr>
+   <tr>
+     <td >
+       <div id="color" style="background-color:#FFF9AC; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFF9AC</span></td>
+     <td>
+       <div id="color" style="background-color:#2E479B; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#2E479B</span></td>
+     </tr>
+     <tr>
+      <td >
+       <div id="color" style="background-color:#EEABCE; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+   
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#EEABCE</span></td>
+     <td>
+       <div id="color" style="background-color:#BDBEC0; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#BDBEC0</span></td>
+   </tr>
+   <tr>
+     <td colspan="4">
+       <span style="display: inline-block; height: 1%;"></span>
+     </td>
+   </tr>
+   <tr><td colspan="4">
+     <span style="color:#003ffc"><b>겨울 쿨</b></span>과 반대되는 색상</td>
+   </tr>
+   <tr>
+     <td>
+       <div id="color" style="background-color:#BC63AF; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#BC63AF</span></td>
+     <td>
+       <div id="color" style="background-color:#5FD4FF; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#5FD4FF</span></td>
+      </tr>
+   <tr>
+      <td>
+       <div id="color" style="background-color:#FFEc6A; width:50px; height: 50px; border-radius:50%;" >
+       </div>
+     </td>
+  
+     <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FFEc6A</span></td>
+     <td>
+       <div id="color" style="background-color:#FD745D; width:50px; height: 50px; border-radius:50%;" ></div>
+     </td>
+      <td><span style="font-family: 'Noto Sans KR'; font-size: 13px; font-weight: bold;" >#FD745D</span></td>
+   </tr>
+ </table>
+ {%endif%}
+ <br>
+ <table id="shareTable">
+   <tr>
+     <td colspan="3">
+       <a href="{% url 'index'%}"> <button type="button" class="startBtn mx-auto" style="font-family: 'CWDangamAsac-Bold'" >다시하기</button></a>
+     </td>
+   </tr>
+   <tr>
+     <td colspan="3"><br><span style="font-family: 'Recipekorea'; color:#f6a329" >공유하기</span></br></td>
+   </tr>
+   <tr>
+     <td><img id="shareImg" src="{%static 'image/kakaotalk.png'%}" onclick="js:shareKakao()"></td>
+     <td><img id="shareImg" src="{%static 'image/twitter.png'%}" onclick="js:shareTwitter()" /></td>
+     <td><img id="shareImg" src="{%static 'image/url.png'%}" onclick="js:shareURL()" /></td>
+   </tr>
+   <tr>
+     <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">카카오톡</span></td>
+     <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">트위터</span></td>
+     <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">URL공유</span></td>
+   </tr>
+ </table>
+{%endblock%}
