@@ -72,8 +72,11 @@ def colorSelect2(request,imageId):
             print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c3=request.POST.getlist('color')[0]
             image.c4=request.POST.getlist('color')[1]
-            image.save()
-            return redirect("colorSelect3",imageId)
+            try :
+                image.save()
+                return redirect("colorSelect3",imageId)
+            except :
+                return render(request,"index.html",{'err':3})
         else : 
             context = {}
             context['imageContents'] = image
@@ -93,8 +96,11 @@ def colorSelect3(request,imageId):
             print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c5=request.POST.getlist('color')[0]
             image.c6=request.POST.getlist('color')[1]
-            image.save()
-            return redirect("colorSelect4",imageId)
+            try :
+                image.save()
+                return redirect("colorSelect4",imageId)
+            except :
+                return render(request,"index.html",{'err':3})
         else : 
             context = {}
             context['imageContents'] = image
@@ -114,8 +120,12 @@ def colorSelect4(request,imageId):
             print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c7=request.POST.getlist('color')[0]
             image.c8=request.POST.getlist('color')[1]
-            image.save()
-            return redirect("loading",imageId)
+            try :
+                image.save()
+                return redirect("loading",imageId)
+            except :
+                return render(request,"index.html",{'err':3})
+            
         else : 
             context = {}
             context['imageContents'] = image
