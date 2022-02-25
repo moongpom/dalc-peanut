@@ -29,8 +29,9 @@ function shareKakao() {
 }
 
 function shareTwitter() {
-    var sendText = "#퍼스널컬러 #테스트 #peanut";
-    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + url);
+    var sendText = "#퍼스널컬러 #테스트 #peanut"; // 전달할 텍스트
+    var sendUrl = "https://peanut-personalcolor.herokuapp.com/"; // 전달할 URL
+    window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
 }
 
 function shareURL() {
