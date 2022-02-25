@@ -1,10 +1,13 @@
 # dalc-peanut
-
+peanut -  personal+nut    퍼스널컬러
 ## 서비스 소개
 
 ## 개발자
 동덕여대 
-
+기획(목지영)
+디자인(김수연)
+AI(김미소, 김진아, 최다솜)
+개발(김은진,정은영)
 ## 개발 환경
 
 <span>
@@ -13,6 +16,7 @@
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
+ + 텐서플로우  코랩 
 </span>
 
 
