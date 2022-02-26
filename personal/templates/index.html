@@ -23,6 +23,8 @@
                 titleContent = '데이터 오류.'
             document.write("{% elif err == 5 %}");
                 titleContent = '사진오류. 올바른 사진을 올려주세요.'
+            document.write("{% else %}");
+                titleContent = '머신러닝오류.'
             document.write("{% endif %}");
             function newalert(){ 
                 Swal.fire({

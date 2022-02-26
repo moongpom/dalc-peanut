@@ -174,7 +174,7 @@ def loading(request,imageId):
             print(most[0][0])#최종데이터
             return render(request, "loading.html",{'result_val':most[0][0]})
         except :
-            return render(request,"index.html",{'err':3})
+            return render(request,"index.html",{'err':6})
     except :
         return render(request,"index.html",{'err':4})
 
