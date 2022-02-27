@@ -46,7 +46,10 @@ def imageUpload(request):
 
 def colorSelect1(request,imageId):
 
-    image=ImageData.objects.get(id= imageId)
+    try :
+        image=ImageData.objects.get(id= imageId)
+    except:
+        return render(request,"index.html",{'err':7})
     # 만약 세션이 맞지 않다면 데이터 접근 못하게
     if image.sessionData != request.session.session_key :
         return render(request,"index.html",{'err':1})
@@ -70,7 +73,10 @@ def colorSelect1(request,imageId):
 
 def colorSelect2(request,imageId):
 
-    image=ImageData.objects.get(id= imageId)
+    try :
+        image=ImageData.objects.get(id= imageId)
+    except:
+        return render(request,"index.html",{'err':7})
 
     if image.sessionData != request.session.session_key :
         return render(request,"index.html",{'err':1})
@@ -94,7 +100,10 @@ def colorSelect2(request,imageId):
 
 def colorSelect3(request,imageId):
     
-    image=ImageData.objects.get(id= imageId)
+    try :
+        image=ImageData.objects.get(id= imageId)
+    except:
+        return render(request,"index.html",{'err':7})
     if image.sessionData != request.session.session_key :
         return render(request,"index.html",{'err':1})
     
@@ -118,7 +127,11 @@ def colorSelect3(request,imageId):
 
 def colorSelect4(request,imageId):
     
-    image=ImageData.objects.get(id= imageId)
+    try :
+        image=ImageData.objects.get(id= imageId)
+    except:
+        return render(request,"index.html",{'err':7})
+
     if image.sessionData != request.session.session_key :
         return render(request,"index.html",{'err':1})
     
@@ -144,7 +157,10 @@ def colorSelect4(request,imageId):
 def loading(request,imageId):
    
     try:
-        image=ImageData.objects.get(id= imageId)
+        try :
+            image=ImageData.objects.get(id= imageId)
+        except:
+            return render(request,"index.html",{'err':7})
         rgbResult=[] #머신러닝으로 최종으로 보낼 이중리스트
         
         rgbList=[]
@@ -184,7 +200,7 @@ def loading(request,imageId):
         except :
             return render(request,"information.html",{'err':6})
     except :
-        return render(request,"information.html",{'err':7})
+        return render(request,"information.html",{'err':0})
 
 def result(request,result_val):
     try:

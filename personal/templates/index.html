@@ -21,13 +21,15 @@
         }
         
     </style>
-
+ <!--1,2,3,4,5,6,7 : information.html에도 오류처리있음-->
     {% if err is not empty %}  
         <script >
             document.write("{% if err == 1 %}");
                 titleContent = '잘못된 접근입니다.'
             document.write("{% elif err == 5 %}");
                 titleContent = '사진오류. 올바른 사진을 올려주세요.'
+            document.write("{% elif err == 7 %}");
+                titleContent = '해당 데이터에 접근 불가능 합니다.'
             document.write("{% else %}");
                 titleContent = '알지 못 하는 오류 발생'
             document.write("{% endif %}");
