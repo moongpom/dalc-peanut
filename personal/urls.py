@@ -25,4 +25,5 @@ urlpatterns = [
     path('colorSelect4/<int:imageId>',colorSelect4,name="colorSelect4"),
     path('result/<int:result_val>', result, name="result"),
     path('loading/<int:imageId>', loading, name="loading"),
+    path('information',information, name="information"),
 ]

@@ -1,0 +1,128 @@
+{%extends 'base.html'%}
+{% load static %}
+
+
+{%block content %}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+.infoBox{
+    margin: auto;
+    width: 400px;
+    height: 500px;
+    background-color: #f6a329;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.members{
+    margin: auto;
+    text-align: center;
+    }
+.members  td{
+    width: 120px;
+    }
+.contacts{
+    margin: auto;
+    text-align: left;
+    }
+.contacts  td{
+    width: 120px;
+    }
+    table .address{
+        text-decoration: underline;
+    }
+    table,tr,td{border: 0px solid black;}
+a{color: black;}
+a:hover{color: black;}
+.smallLogo{ text-align: right;}
+.logoImg{
+    margin: auto;
+    text-align: right;
+}
+.logoImg td{
+width :320px;
+}
+</style>
+    {% if err is not empty %}  
+    <script >
+        document.write("{% if err == 2 %}");
+            titleContent = '세션정보가 없습니다.'  
+        document.write("{% elif err == 3 %}");
+            titleContent = '결과 값이 잘못되었습니다.'
+        document.write("{% elif err == 4 %}");
+            titleContent = '데이터 저장 오류.' 
+        document.write("{% elif err == 6 %}");
+            titleContent = '머신러닝오류.'
+        document.write("{% else %}");
+            titleContent = '알지 못 하는 오류 발생'
+        document.write("{% endif %}");
+        function newalert(){ 
+            Swal.fire({
+                    title: titleContent,
+                    text: "해당 오류 반복 시 개발진에게 연락주세요",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+            }
+    newalert();
+    </script>
+    {%endif%}
+    <br><br><br><br>
+    <div class="infoBox">
+        
+        <!--<hr style="width: 150px; height: 15px; border-radius: 10px; margin: auto; background-color: #FFFAF3; color:white">-->
+        <br>
+        <br> <br>
+        <table class= "members">
+            <tr ><td>기획&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>목지영&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr height="10px"><td ></td>  </tr>
+            <tr  ><td>디자인&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>김수연&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+            <tr  height="10px" ><td ></td>  </tr>
+            <tr ><td >AI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>김미소&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+            <tr ><td ></td><td>김진아&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+            <tr ><td ></td><td>최다솜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+            <tr  height="10px"><td ></td>  </tr>
+            <tr ><td >개발&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td>김은진&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+            <tr ><td ></td><td>정은영&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>  </tr>
+            <tr  height="10px"><td ></td>  </tr>
+          
+        </table>
+
+        <br>
+        <table class="contacts">
+            <tr><td> <img src="{%static 'image/instaMiniLogo.png'%}" alt="instaLogo" class="img-fluid" width="20px">&nbsp;Instagram</td><td class="address"><a href=" https://www.instagram.com/dalcpeanut/ ">@dalcpeanut</a></td></tr>
+            <tr  height="10px"><td ></td>  </tr>
+            <tr><td><img src="{%static 'image/emailMiniLogo.png'%}" alt="mailLogo" class="img-fluid" width="20px">&nbsp;E-mail</td><td class="address"><a href="mailto:dalcpeanut@gmail.com">dalcpeanut@gmail.com</a></td></tr>
+        </table>
+      <!-- <table>
+           <tr><td>기획</td><td>목지영</td></tr>
+           <tr><td>디자인</td><td>김수연</td></tr>
+           <tr ><td >AI</td>
+                <td>
+                    <table>
+                        <tr><td>김미소</td></tr>
+                        <tr><td>김진아</td></tr>
+                        <tr><td>최다솜</td></tr>
+                    </table>
+                </td>
+            </tr>
+           <tr><td>개발</td>
+                <td>
+                    <table>
+                        <tr><td>김은진</td></tr>
+                        <tr><td>정은영</td></tr>
+                    </table>
+                </td>
+            </tr>
+           <tr><td>Instagram</td><td></td></tr>
+           <tr><td>E-mail</td><td></td></tr>
+           </table>-->
+           <br>
+           <table class="logoImg">
+               <tr><td>
+                <a href="{% url 'index'%}"><img src="{%static 'image/peanutSmall.png'%}" alt="mailLogo" class="smallLogo" width="50px"></a>
+        </td></tr>    
+        </table>
+        </div>
+    <br><br>
+     
+{%endblock%}

@@ -15,13 +15,22 @@ def index(request):
     print(request.session.session_key)
     return render(request,"index.html")
 
+def information(request):
+    return render(request,"information.html")
+
 def imageUpload(request):
     if request.method == 'POST': 
         image_form = ImageForm(request.POST,request.FILES)
         if image_form.is_valid():
-            imgForm = image_form.save(commit = False)
+            try :
+                imgForm = image_form.save(commit = False)
+            except:
+                return render(request,"index.html",{'err':5})
             imgForm.upload_date = timezone.now() 
-            imgForm.sessionData = request.session.session_key
+            try :
+                imgForm.sessionData = request.session.session_key
+            except:
+                return render(request,"information.html",{'err':2})
             print("세션확인 --")
             print("imgForm.sessionData",imgForm.sessionData ) 
             print("request.session.session_key",request.session.session_key) 
@@ -29,7 +38,7 @@ def imageUpload(request):
                 imgForm.save()
                 return redirect("colorSelect1",imgForm.id)
             except :
-                return render(request,"index.html",{'err':5})
+                return render(request,"information.html",{'err':4})
 
     else:
         image_form = ImageForm()
@@ -44,13 +53,14 @@ def colorSelect1(request,imageId):
     
     else :
         if request.method == "POST":
+            print("request.POST['color0']",request.POST.getlist('color'))
             image.c1=request.POST.getlist('color')[0]
             image.c2=request.POST.getlist('color')[1]
             try :
                 image.save()
                 return redirect("colorSelect2",imageId)
             except :
-                return render(request,"index.html",{'err':3})
+                return render(request,"information.html",{'err':4})
         else : 
             context = {}
             context['imageContents'] = image
@@ -68,15 +78,13 @@ def colorSelect2(request,imageId):
     else :
         if request.method == "POST":
             print("request.POST['color0']",request.POST.getlist('color'))
-            print("request.POST['color0']",request.POST.getlist('color')[0])
-            print("request.POST['color1']",request.POST.getlist('color')[1])
             image.c3=request.POST.getlist('color')[0]
             image.c4=request.POST.getlist('color')[1]
             try :
                 image.save()
                 return redirect("colorSelect3",imageId)
             except :
-                return render(request,"index.html",{'err':3})
+                return render(request,"information.html",{'err':4})
         else : 
             context = {}
             context['imageContents'] = image
@@ -100,7 +108,7 @@ def colorSelect3(request,imageId):
                 image.save()
                 return redirect("colorSelect4",imageId)
             except :
-                return render(request,"index.html",{'err':3})
+                return render(request,"information.html",{'err':4})
         else : 
             context = {}
             context['imageContents'] = image
@@ -124,7 +132,7 @@ def colorSelect4(request,imageId):
                 image.save()
                 return redirect("loading",imageId)
             except :
-                return render(request,"index.html",{'err':3})
+                return render(request,"information.html",{'err':4})
             
         else : 
             context = {}
@@ -174,13 +182,13 @@ def loading(request,imageId):
             print(most[0][0])#최종데이터
             return render(request, "loading.html",{'result_val':most[0][0]})
         except :
-            return render(request,"index.html",{'err':6})
+            return render(request,"information.html",{'err':6})
     except :
-        return render(request,"index.html",{'err':4})
+        return render(request,"information.html",{'err':7})
 
 def result(request,result_val):
     try:
         print("@@@@@@@@최종결과값",result_val)
         return render(request,"result.html",{'result_val':result_val})
     except :
-        return render(request,"index.html",{'err':3})
+        return render(request,"information.html",{'err':3})

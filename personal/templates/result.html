@@ -4,7 +4,17 @@
 
 {%block content %}
 <!--1.봄 2. 가을 3.여름 4. 겨울-->
-
+<style>        
+  .info{
+            text-decoration: none;
+            text-decoration: underline;
+            color: #4A4A4A;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+            letter-spacing:1px;
+            margin-top: 2px;
+        }
+  </style>
     <br>
  {% if result_val  == 1 %}
  <p id="subfont">
@@ -315,4 +325,5 @@
      <td><span style="font-family: 'Noto Sans KR'; font-weight: bold;">URL공유</span></td>
    </tr>
  </table>
+ <a href="{% url 'information' %}"><p class="info">개발진 정보 </p></a>
 {%endblock%}
