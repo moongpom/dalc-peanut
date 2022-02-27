@@ -93,34 +93,35 @@
         width :320px;
         }
         </style>
-            {% if err is not empty %}  
-            <script >
-                document.write("{% if err == 2 %}");
-                    titleContent = '세션정보가 없습니다.'  
-                document.write("{% elif err == 3 %}");
-                    titleContent = '결과 값이 잘못되었습니다.'
-                document.write("{% elif err == 4 %}");
-                    titleContent = '데이터 저장 오류.' 
-                document.write("{% elif err == 6 %}");
-                    titleContent = '머신러닝오류.'
-                document.write("{% else %}");
-                    titleContent = '알지 못 하는 오류 발생'
-                document.write("{% endif %}");
-                function newalert(){ 
-                    Swal.fire({
-                            title: titleContent,
-                            text: "해당 오류 반복 시 개발진에게 연락주세요",
-                            icon: 'warning',
-                            confirmButtonColor: '#3085d6',
-                            confirmButtonText: '확인',
-                        }) 
-                    }
-            newalert();
-            </script>
-            {%endif%}
+      
 </head>
 
 <body> 
+    {% if err is not empty %}  
+    <script >
+        document.write("{% if err == 2 %}");
+            titleContent = '세션정보가 없습니다.'  
+        document.write("{% elif err == 3 %}");
+            titleContent = '결과 값이 잘못되었습니다.'
+        document.write("{% elif err == 4 %}");
+            titleContent = '데이터 저장 오류.' 
+        document.write("{% elif err == 6 %}");
+            titleContent = '머신러닝오류.'
+        document.write("{% else %}");
+            titleContent = '알지 못 하는 오류 발생'
+        document.write("{% endif %}");
+        function newalert(){ 
+            Swal.fire({
+                    title: titleContent,
+                    text: "해당 오류 반복 시 개발진에게 연락주세요",
+                    icon: 'warning',
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '확인',
+                }) 
+            }
+    newalert();
+    </script>
+    {%endif%}
     <div class="container">
         <section id="main" class="mainfont mx-auto my-5 py-4 px-3">
             <div id=" titlefont">
@@ -168,4 +169,3 @@
 </body>
 
 </html>
-
