@@ -1,7 +1,7 @@
 <h1 align="center">퍼스널 컬러 진단 웹 사이트 'Peanut'</h1>
 <img src="https://user-images.githubusercontent.com/72064966/183445568-22d7f6c8-7101-411d-91e4-5a70d8078cc1.JPG">
 
-## 기술스택
+## 기술 스택
 <p>
   <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/>
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=Python&logoColor=white"/>
@@ -16,7 +16,7 @@
 
 </p>
 
-## 페이지 별 상세 내용
+## 페이지 별 상세 내용 🛠 
 * 메인 페이지
   * 진단 시작 및 개발진 정보 확인
 * 개발진 정보 페이지
